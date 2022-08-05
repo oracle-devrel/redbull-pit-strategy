@@ -1,0 +1,7 @@
+setuptools
+wheel
+numpy
+pandas
+fastf1
+matplotlib
+numpy
