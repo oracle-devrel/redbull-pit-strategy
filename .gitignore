@@ -31,3 +31,6 @@ Temporary Items
 .crt
 .csr
 .pem
+
+# Ignore data files (recommended to have them locally only)
+data/*
