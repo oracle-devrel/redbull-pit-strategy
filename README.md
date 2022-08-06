@@ -14,17 +14,14 @@ You'll learn how to get data from some public data sources, then how to analyze 
 
 There is some infrastructure that must be deployed before you can enjoy this tutorial.  See the [Terraform documentation](./terraform/README.md) for more information.
 
-After the OCI infrastructure is deployed, proceed with the [beginner's tutorial](./beginners/README.md) to start through the ML labs.
+After you've completed the OCI registration process, proceed with the [pit strategy workshop.](./hols/pitstrategy/intro/intro.md)
 
 ### Prerequisites
 
-You must have an OCI account. [Click here](https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted) to create a new cloud account.
+You must have an **OCI** account. [Click here](https://www.oracle.com/cloud/free/?source=:ow:o:s:nav::DevoGetStarted&intcmp=:ow:o:s:nav::DevoGetStarted) to create a new cloud account.
 
-This solution is designed to work with several OCI services, allowing you to quickly be up-and-running:
+This solution is designed to work mainly within OCI Data Science, allowing you to quickly be up-and-running:
 * [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
-* [Resource Manager](https://docs.oracle.com/en-us/iaas/Content/ResourceManager/Concepts/landing.htm)
-
-There are required OCI resources (see the [Terraform documentation](./terraform/README.md) for more information) that are needed for this tutorial.
 
 ## Notes/Issues
 
