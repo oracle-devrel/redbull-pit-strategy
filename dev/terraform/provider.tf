@@ -24,10 +24,3 @@ variable "tenancy_ocid" {
 variable "compartment_ocid" {
   type = string
 }
-
-variable "ssh_public_key" {
-  type = string
-}
-
-
-
