@@ -24,3 +24,8 @@ variable "tenancy_ocid" {
 variable "compartment_ocid" {
   type = string
 }
+
+variable "desired_number_cpus" {
+  type = string
+  default = 1
+}
