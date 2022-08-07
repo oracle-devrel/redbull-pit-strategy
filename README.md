@@ -1,5 +1,7 @@
 # redbull-pit-strategy
 
+[![License: UPL](https://img.shields.io/badge/license-UPL-green)](https://img.shields.io/badge/license-UPL-green) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=oracle-devrel_redbull-pit-strategy)](https://sonarcloud.io/dashboard?id=oracle-devrel_redbull-pit-strategy)
+
 ## Introduction
 
 Are you interested in learning machine learning (ML)?  How about doing this in the context of the exciting world of F1 racing?!  Get your ML skills bootstrapped here with Oracle and Red Bull Racing!
