@@ -34,3 +34,5 @@ Temporary Items
 
 # Ignore data files (recommended to have them locally only)
 data/*
+
+dev/terraform/terraform.tfvars
