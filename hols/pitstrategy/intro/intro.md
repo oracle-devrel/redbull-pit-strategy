@@ -6,7 +6,6 @@
 
 * An [Oracle Free Tier, Paid or LiveLabs Cloud Account](https://signup.cloud.oracle.com/)
 * Active Oracle Cloud Account with available credits to use for Data Science service.
-* Creating a League of Legends account and completing the in-game tutorial, as we'll need an account to get an API key and perform in-game tests. Also, you'll need to [download the game and register](https://www.leagueoflegends.com/en-gb/). 
 
 
 ## Task 1: Get Started
