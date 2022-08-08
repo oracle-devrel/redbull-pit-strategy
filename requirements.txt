@@ -1,8 +1,12 @@
 setuptools
 wheel
 numpy
-pandas
+pandas==1.2.5
 fastf1
 matplotlib
 numpy
-seaborn
+lightgbm
+oracle-ads
+joblib
+xgboost
+mlxtend
