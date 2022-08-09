@@ -36,3 +36,5 @@ Temporary Items
 data/*
 
 dev/terraform/terraform.tfvars
+
+notebooks/.ipynb_checkpoints/
