@@ -18,7 +18,7 @@ resource "oci_datascience_notebook_session" "lol_notebook_session" {
   compartment_id = var.compartment_ocid
   project_id     = oci_datascience_project.redbull_project.id
 
-  display_name = "League of Legends Notebook Session"
+  display_name = "RedBull Pit Strategy Notebook Session"
 
   notebook_session_config_details {
     shape = data.oci_datascience_notebook_session_shapes.ds_shapes.notebook_session_shapes[0].name
