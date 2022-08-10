@@ -10,3 +10,4 @@ oracle-ads
 joblib
 xgboost
 mlxtend
+seaborn
