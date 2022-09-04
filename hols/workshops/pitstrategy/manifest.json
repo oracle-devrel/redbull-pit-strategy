@@ -15,8 +15,38 @@
     },
     {
       "title": "Lab 2: Infrastructure",
-      "description": "The Introduction is always second. The title and contents menu title match for the Introduction.",
+      "description": "Infrastructure",
       "filename": "../../pitstrategy/infra/infra.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 3: Data Extraction",
+      "description": "Data Extraction",
+      "filename": "../../pitstrategy/dataextraction/dataextraction.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 4: Data Exploration",
+      "description": "Data Exploration",
+      "filename": "../../pitstrategy/dataexploration/dataexploration.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 5: Data Merging",
+      "description": "Data Merging",
+      "filename": "../../pitstrategy/datamerging/datamerging.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 6: Model Training",
+      "description": "Model Training",
+      "filename": "../../pitstrategy/modeltraining/modeltraining.md",
+      "type": "dbcs"
+    },
+    {
+      "title": "Lab 7: Model Deployment",
+      "description": "Model Deployment",
+      "filename": "../../pitstrategy/modeldeployment/modeldeployment.md",
       "type": "dbcs"
     },
     {
