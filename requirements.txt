@@ -11,3 +11,4 @@ joblib
 xgboost
 mlxtend
 seaborn
+oracle-ads[notebook]
