@@ -109,6 +109,77 @@ Estimated Lab Time: 15 minutes
 You may now [proceed to the next lab](#next).
 
 
+## Task 4: Accessing Notebook
+
+Having just created our OCI Data Science environment, we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
+
+- The easiest way is to access into the notebook **through the URL** that we previously copied from Terraform's output.
+
+    ![Start SH output](images/start-sh-ssh.png)
+
+    If you have done it this way, make sure to **skip through to the next task**.
+
+- (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
+
+    ![](./images/select_data_science.png)
+
+    > You may find the Data Science section by also searching in the top left bar, or in the Analytics & AI tab, if it doesn't appear in "Recently visited" for you:
+
+    ![](images/analyticstab.png)
+
+    Now, we have access to a [list of our Data Science projects launched within OCI.](https://cloud.oracle.com/data-science/projects) We access our project, and inside our project we'll find the notebook.
+
+    > The name of the notebook may be different than shown here in the screenshot.
+
+    ![](./images/open-notebook.png)
+
+    ![](./images/open-notebook2.png)
+
+    You should now see the Jupyter environment
+
+    ![](./images/notebook.png)
+
+
+
+
+## Task 5: Setting up Data Science Environment
+
+We now need to load our notebook into our environment. For that, we have two options:
+1. **Option 1 (Recommended)**: Opening a **Terminal** inside the _'Other'_ section the console and re-downloading the repository again:
+
+    ![](./images/open_terminal.png)
+
+    Then, we re-clone the repository using this command:
+
+    ```
+    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy --branch dev</copy>
+    ```
+
+    Then, executing the following command, which will setup an ODCS conda environment.
+
+    ```
+    <copy>odsc conda create -n myconda</copy>
+    ```
+
+    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked:
+
+    ![](./images/proceed.png)
+
+    Finally, execute these commands to install required Python dependencies:
+
+    ```
+    <copy>conda activate /home/datascience/conda/mycondav1_0
+    conda install python=3.8
+    pip install -r redbull-pit-strategy/requirements.txt</copy>
+    ```
+
+    After this command, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
+
+    
+2. **Option 2**: Using the upload button to transfer the [repository's contents](https://github.com/oracle-devrel/redbull-pit-strategy/tree/dev) from our own computer locally, we use the upload button to transfer the files:
+
+    ![](./images/upload.jpg)
+
 
 ## Acknowledgements
 
