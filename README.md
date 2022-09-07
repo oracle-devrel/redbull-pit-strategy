@@ -6,7 +6,10 @@
 
 Are you interested in learning machine learning (ML)?  How about doing this in the context of the exciting world of F1 racing?!  Get your ML skills bootstrapped here with Oracle and Red Bull Racing!
 
-![Red Bull F1 Race Car](./images/redbull_car.png)
+![Red Bull F1 Race Car](./images/redbull_car.jpg)
+
+![Red Bull F1 Race Car](./images/redbull_car_2.jpg)
+
 
 This tutorial teaches ML analytics with a series of hands-on labs (HOLs) using the [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm) service in [Oracle Cloud Infrastructure](https://cloud.oracle.com/).
 
