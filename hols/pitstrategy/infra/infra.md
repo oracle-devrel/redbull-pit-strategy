@@ -15,7 +15,7 @@ Terraform is an Open Source tool to deploy resources in the cloud with code. You
 
 Do you want to learn more? Feel free to check [Terraform's code in this repository](../../../dev/terraform/) after the workshop.
 
-Estimated Lab Time: 15 minutes
+Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
@@ -106,9 +106,6 @@ Estimated Lab Time: 15 minutes
     > Note: login credentials for the Data Science notebook are the same as the ones used to access Oracle Cloud Infrastructure.
 
 
-You may now [proceed to the next lab](#next).
-
-
 ## Task 4: Accessing Notebook
 
 Having just created our OCI Data Science environment, we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
@@ -168,9 +165,11 @@ We now need to load our notebook into our environment. For that, we have two opt
     Finally, execute these commands to install required Python dependencies:
 
     ```
-    <copy>conda activate /home/datascience/conda/mycondav1_0
+    <copy>
+    conda activate /home/datascience/conda/mycondav1_0
     conda install python=3.8
-    pip install -r redbull-pit-strategy/requirements.txt</copy>
+    pip install -r redbull-pit-strategy/requirements.txt
+    </copy>
     ```
 
     After this command, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
@@ -179,6 +178,23 @@ We now need to load our notebook into our environment. For that, we have two opt
 2. **Option 2**: Using the upload button to transfer the [repository's contents](https://github.com/oracle-devrel/redbull-pit-strategy/tree/dev) from our own computer locally, we use the upload button to transfer the files:
 
     ![](./images/upload.jpg)
+
+
+## Task 6: Accessing our Notebooks
+
+Once we've re-downloaded the repository (or used the upload button to transfer the notebooks), we should see the repository / files in our file explorer:
+
+![](./images/file_explorer.png)
+
+We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each one of the notebooks. This is the list of notebooks we will review:
+- [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
+- [_`01 data exploration.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/01%20data%20exploration.ipynb)
+- [_`02 merge data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/02%20merge%20data.ipynb)
+- [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
+-  [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
+
+
+You may now [proceed to the next lab](#next).
 
 
 ## Acknowledgements
