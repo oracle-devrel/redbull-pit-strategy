@@ -34,5 +34,5 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
-* **Contributors** - Alireza Dibazar, Victor Martin - Product Strategy Director
-* **Last Updated By/Date** - September 5th, 2022
+* **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
+* **Last Updated By/Date** - September 7th, 2022
