@@ -4,7 +4,7 @@
 
 After we have extracted and analyzed our datasets, it's time to merge them into a more complete file/dataset that combines the characteristics of the smaller files we already have. Then, we will use this merged dataset as an input to our Machine Learning models.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 20 minutes
 
 ### Prerequisites
 
@@ -25,7 +25,7 @@ Once we have both things, and since **timestamps** from both tables have informa
 
 ## Task 2: Expanding df_lapWeather with Position and GridPosition -> df_agg
 
-We have lap data nowi and also weather data combined with it.
+At this point of the lab, we have lap data available, and also weather data combined with it.
 
 We want to add grid position and summarize lap data. Summarization means that we need to extract features up until the race. And anything that happens before a race should be considered incoming, valid data for the upcoming race.
 
@@ -92,12 +92,22 @@ And finally we can comparedifferent stint lap times, and see their fuel lines an
 
 > Note: In the above figure, we can see that in the same race, both drivers pitted at similar times, although Verstappen pitted a bit earlier (about 4 laps earlier on average). Also, we observe that Leclerc's last stint has a very high slope, which indicates that the lap times weren't great compared to Verstappen's, even though both drivers used the same tyre strategy (soft, then medium, then medium tyres) in Bahrain in 2019. This visualization encompasses what actually happened during the race: Leclerc did the fastest race time in the 38th lap, then dropped back with higher lap times in the last stint compared to Verstappen, who sustained very consistent lap times until the end of the race. Verstappen gained 1 position and Leclerc lost 2 positions compared to their starting grid positions.
 
+> Also note that, depending on the number of laps per stint, the slope of the stint lap times may vary in reliability: a stint with 20 laps will be much more reliable to look at than a stint with just 6 laps (remember that we already filtered out all stints with less than 5 laps).
+
 
 ## Task 6: Lag Features
 
 This is the last thing we need to fix. As we mentioned before, anything up to a race should be considered as an input to the race.
 
-**However**, we can't use the previously-calculated linear regression parameters from a race, to predict the same race itself; as the race hasn't begun yet. Therefore, we need to create **lag features** that will consider the degradation slopes and bias from the **last race** (as the car setup, components, and conditions will be as close as possible to the race we're trying to predict). For this, we create a function called _`func_create_lag_features`_, where we 'copy' the values from the last race into this races' degradation slopes and biases:
+The main focus of this project is to create an ML model to predict the best tyre strategy, meaning **the optimal length for the first stint for our drivers**.
+
+**However**, we can't use the previously-calculated linear regression parameters from a race, to predict the same race itself; as the race hasn't begun yet. Additionally, there's a lot of noise since the number of laps per stint doesn't quite have as many data points as we want.
+
+Therefore, we will create an **average slope and bias** based on the **average tyre compound for last year's  event** (for the same driver, as drivers have different degradation patterns), and have this as a metric to measure these linear regression parameters in a **normalized** way. We'll call them **lag features**. 
+
+> Note: we will only perform this if the event has happened more than once, and we have a baseline to compare the current race with another year's circuit and characteristics.
+
+Due to this, we'll create a function called _`func_create_lag_features`_, where we average the values from the last event into this races' degradation slopes and biases:
 
 ![](./images/task6_lag_features.png)
 
