@@ -119,8 +119,6 @@ Finally, we save the model in pickle file; and we'll use this pickle file to dep
 
 ![](./images/c_task7_savemodel.png)
 
-image.png
-
 ## Conclusions
 
 In this chapter, we have:
@@ -140,4 +138,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 12th, 2022
+* **Last Updated By/Date** - September 13th, 2022

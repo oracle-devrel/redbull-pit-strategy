@@ -15,7 +15,7 @@ Terraform is an Open Source tool to deploy resources in the cloud with code. You
 
 Do you want to learn more? Feel free to check [Terraform's code in this repository](../../../dev/terraform/) after the workshop.
 
-Estimated Lab Time: 30 minutes
+Estimated Lab Time: 15 minutes
 
 ### Prerequisites
 
@@ -55,6 +55,7 @@ Estimated Lab Time: 30 minutes
     ![Go To File](images/code-editor-go-to-file.png)
 
 3. The file will open and you can copy values you will get from running commands on Cloud Shell and paste it on the Code Editor.
+
 4. Copy the output of the following command as the tenancy OCID:
     ```
     <copy>echo $OCI_TENANCY</copy>
@@ -201,4 +202,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 7th, 2022
+* **Last Updated By/Date** - September 12th, 2022
