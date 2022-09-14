@@ -80,7 +80,12 @@ Estimated Lab Time: 15 minutes
     > <copy>oci iam compartment list --all --compartment-id-in-subtree true --query "data[].id" --name COMPARTMENT_NAME</copy>
     > ```
 
-6. Save the file in the Code Editor.
+6. Finally, edit the last variable _`desired_number_cpus`_. It determines the number of OCPUs to use in the Data Science environment. Recommended size is a value from 1 to 4 for this workshop.
+
+    ![](images/desired_num_ocpus.png)
+
+
+7. Save the file in the Code Editor.
     ![Code Editor Save](images/code-editor-save.png)
 
 
@@ -158,9 +163,9 @@ We now need to load our notebook into our environment. For that, we have two opt
     <copy>odsc conda create -n myconda</copy>
     ```
 
-    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked:
-
     ![](./images/proceed.png)
+
+    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked.
 
     Finally, execute these commands to install required Python dependencies:
 
