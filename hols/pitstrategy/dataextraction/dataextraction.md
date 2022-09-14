@@ -49,7 +49,7 @@ sch = fastf1.get_event_schedule(year).to_dict()
 
 ## Running the Notebook
 
-In order to run the notebook after opening it, we need to ensure that the selected Python/conda environment is the right one. By default, 'Python 3' will be the selected kernel. The right kernel to choose should be called _`conda env:mycondav1_0`_ if you followed all steps. We need to change this in the following way:
+In order to run the notebook _`00_ pull data.ipynb`_ after opening it (by double clicking it), we need to ensure that the selected Python/conda environment is the right one. By default, 'Python 3' will be the selected kernel. The right kernel to choose should be called _`conda env:mycondav1_0`_ if you followed all steps. We need to change this in the following way:
 
 ![](./images/select_preferred_kernel.png)
 
