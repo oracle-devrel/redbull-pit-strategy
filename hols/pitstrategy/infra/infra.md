@@ -4,12 +4,11 @@
 
 In this lab we will build the infrastructure that we will use to run the rest of the workshop.
 
-The main four elements that we will be creating are:
-- **Data Science** session and notebook, to experiment with the newly-generated data using notebooks.
+The main element that we will be creating is a **Data Science** session and notebook, to experiment with the newly-generated data using notebooks.
 
 ![Infrastructure](images/lol_infra.png)
 
-We will use Cloud Shell to execute `start.sh` script that will call Terraform to deploy all the infrastructure required and setup the configuration. If you don't know about Terraform, don't worry, there is no need. Also, there are no installation requirements: we will use Cloud Shell (which has Terraform installed by default) to deploy our infrastructure. 
+We will use Cloud Shell to execute _`start.sh`_ script that will call Terraform to deploy all the infrastructure required and setup the configuration. If you don't know about Terraform, don't worry, there is no need. Also, there are no installation requirements: we will use Cloud Shell (which has Terraform installed by default) to deploy our infrastructure. 
 
 Terraform is an Open Source tool to deploy resources in the cloud with code. You declare what you want in Oracle Cloud and Terraform make sure you get the resources created.
 
