@@ -3,8 +3,8 @@
 ## Introduction
 
 Once we have our dataset ready, this notebook focuses on creating two different ML models: one _classifier_ and one _regressor_.
-- **Regression** Model: we will predict the optimal stint length for the first stint (stintNum == 1). In other words, we'll predict when it's most optimal for the driver to pit **for the first time** in the race.
-- **Classification** Model: we will use **bucketization** as a technique to classify the optimal pit stop window. We will have 5 different buckets; and our model will predict in which of these buckets it's most optimal to pit for the first time in the race.
+- **Regression** Model: we will predict the optimal stint length for the first stint (stintNum == 1). In other words, we'll predict when it's most optimal for the driver to pit **for the first time** in a race.
+- **Classification** Model: we will use **bucketization** as a technique to classify the optimal pit stop window. We will have 5 different buckets; and our model will predict in which of these buckets it's most optimal to pit for the first time in a race.
 
 Estimated Lab Time: 30 minutes
 
@@ -16,7 +16,7 @@ Estimated Lab Time: 30 minutes
 
 ## Task 1: Loading Data
 
-The first thing we need to consider is that our final dataset called _`final_data.csv`_ contains data for all stints in a race. Since, for both models, we're trying to predict only the optimal first stint length, we'll have to apply _filtering_ to our dataset to remove all data points in our dataset that:
+The first thing we need to consider is that our final dataset called _`final_data.csv`_ contains data for all stints during races. Since, for both models, we're trying to predict only the optimal first stint length, we'll have to apply _filtering_ to our dataset to remove all data points in our dataset that:
 - Have a stint length of less than 5 rounds
 - Have a stint length of more than 35 rounds
 - Isn't the first stint in the race
@@ -31,7 +31,7 @@ Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five 
 > Note that we have about 1250 rows of data for ~4.5 years of data after all this process. If we also remove 'NaN' values (e.g. slope and bias for fuel / tyre degradation are NaN) we get about 200-300 rows of data. Therefore, we *will consider* NaN values as we otherwise would almost run out of data, and find a way to deal with these indeterminate values in other ways.
 <br>
 
-> **IMPORTANT**: Also note that **tree models in Machine Learning are NaN-resistant!!** We'll be using gradient boosted decision trees (XGBM and LGBM models) as our model to solve this.
+> **IMPORTANT**: Also note that we'll be using gradient boosted decision trees (XGBM and LGBM models) as our model to solve this, as **they accept NaN values** and this doesn't affect the decision making of these trees. 
 
 ## Task 2: Variable Correlations and Visualizations
 
@@ -83,10 +83,9 @@ Now, we have information about the MAE for our regression model. However, it's a
 
 ![](./images/c_task5_residuals.png)
 
-> The above left figure shows the absolute value of residuals. Looking at this, we can observe the amount of errors in each prediction. We see that the figure is very skewed towards the left, which means that most errors are constrained in the range of [0, 5] laps from the true value, and a big part of all these errors in the range of [0.0, 2.5], which means that our model, even though it makes errors, makes relatively "close" errors to reality. 
+> The above left figure shows the absolute value of residuals. Looking at this, we can observe the amount of errors in each prediction. We see that the figure is very skewed towards the left, which means that most errors are constrained in the range of [0, 5] laps from the true value, and a big part of all these errors in the [0.0, 2.5] range, which means that our model, even though it makes errors, makes relatively "close" errors to reality. 
 <br>
-
-> In the above right picture, we have another way to visualize this in percentages: we can see how many % of errors are accumulated in a specific range, e.g. if we look at the '5.0' value in the *x* axis, we see that 80% of **all** errors are within this range ([0, 5]); and 60% of all errors are within the range of ([0, 2.5]), which means that most errors from the model aren't that far apart from true values. This allows us to conclude that our model is accurate, and this measurement can complement the baseline accuracy of the model (several Data Science problems focus only on baseline model accuracy without looking at residuals).
+> In the above right picture, we have another way to visualize this in percentages: we can see how many % of errors are accumulated in a specific range, e.g. if we look at the '5.0' value in the *x* axis, we see that 80% of **all** errors are within this range ([0, 5]); and 60% of all errors are within the range of (0, 2.5), which means that most errors from the model aren't that far apart from true values. This allows us to conclude that our model is accurate, and this measurement can complement the baseline accuracy of the model (several Data Science problems focus only on baseline model accuracy without looking at residuals).
 
 ## Task 6: Modeling with Pipelines
 

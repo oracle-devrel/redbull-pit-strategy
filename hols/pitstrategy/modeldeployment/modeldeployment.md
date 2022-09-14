@@ -90,9 +90,16 @@ If you want to destroy the model from the catalog and OCI (also, to save money o
 
 In this chapter, we have learned how to deploy an already-created Machine Learning model.
 
-I hope this workshop was useful for everybody, and we'll see you in the upcoming workshops.
+I hope this workshop was useful for everybody, and we'll see you in the upcoming workshops!
 
-You may now [proceed to the next lab](#next).
+### How can I get started on OCI?
+
+Remember that you can always sign up for free with OCI! Your Oracle Cloud account provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible OCI services for up to 30 days. These Always Free services are available for an **unlimited** period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first. You can [sign up here for free](https://signup.cloud.oracle.com/?language=en&sourceType=:ow:de:te::::&intcmp=:ow:de:te::::).
+
+### Join the conversation!
+
+If you’re curious about the goings-on of Oracle Developers in their natural habitat, come [join us on our public Slack channel](https://bit.ly/devrel_slack)! We don’t mind being your fish bowl 🐠
+
 
 
 ## Acknowledgements
