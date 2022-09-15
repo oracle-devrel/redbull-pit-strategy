@@ -165,17 +165,17 @@ We now need to load our notebook into our environment. For that, we have two opt
 
     ![](./images/proceed.png)
 
-    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked.
-
     Finally, execute these commands to install required Python dependencies:
 
     ```
     <copy>
     conda activate /home/datascience/conda/mycondav1_0
-    conda install python=3.8
+    conda install -y python=3.8
     pip install -r redbull-pit-strategy/requirements.txt
     </copy>
     ```
+
+    > Note: make sure to accept all prompts by typing 'y' as in 'Yes' when asked.
 
     After this command, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
 
@@ -206,4 +206,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 12th, 2022
+* **Last Updated By/Date** - September 16th, 2022
