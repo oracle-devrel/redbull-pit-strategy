@@ -70,15 +70,27 @@ We take a look at the model's summary status to see whether everything is OK and
 
 > Note: when a model is deployed, a Load Balancer is automatically created to support and monitor traffic and prevent the model from overloading due to receiving too many calls.
 
+These models and model deployments are accessible from the OCI Panel, and can be stopped, restarted, updated and deleted whenever we need:
+
+![](./images/models.png)
+
+![](./images/model_deployments.png)
+
+From within the model deployment, we can extract the endpoint API: 
+
+![](./images/invoking_endpoint_url.png)
+
+This endpoint is the one we'll call in the following task to get prediction results from our model.
 
 ## Task 6: Invoking Endpoint from anywhere
 
-We take the model's OCID that was returned to us when we saved the model to the catalog, and perform this call:
+We take the model's OCID from the previous task and make the HTTP request to get results:
 
 ![](./images/invoking_endpoint.png)
 
-We see that the model has returned ten different predictions for the 10 rows we made requests for. Notice that we can make as many row-requests as we want within the same API call.
+We see that the model has returned ten different predictions for the 10 rows we made requests for.
 
+> Notice that we can make as many row-requests as we want within the same API call.
 
 ## Task 7: Destroying Model (Optional)
 
