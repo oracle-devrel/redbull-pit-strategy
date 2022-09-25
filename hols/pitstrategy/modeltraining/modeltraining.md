@@ -1,4 +1,4 @@
-# Model Training
+# Lab 5: Model Training
 
 ## Introduction
 

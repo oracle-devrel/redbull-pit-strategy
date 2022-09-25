@@ -1,4 +1,4 @@
-# Data Merging
+# Lab 4: Data Merging
 
 ## Introduction
 

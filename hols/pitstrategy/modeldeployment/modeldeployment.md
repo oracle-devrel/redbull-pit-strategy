@@ -1,4 +1,4 @@
-# Model Deployment
+# Lab 6: Model Deployment
 
 ## Introduction
 
@@ -17,11 +17,11 @@ Estimated Lab Time: 20 minutes
 
 We load the saved model in pickle format.
 
-![](./images/loadingmodel.png)
+![load model](./images/loadingmodel.png)
 
 ## Task 2: Creating SklearnModel() object
 
-![](./images/sklearnmodel.png)
+![sklearn model](./images/sklearnmodel.png)
 
 Once we have our SklearnModel() object, we need to prepare the object with _`.prepare()`_. This function will create the model artifacts, and contains information about which Python/conda environment should be the one to resolve the model's call when we invoke it. We'll specify our conda environment to be a pre-trained model called _`generalml_py37_cpu_v1`_.
 
@@ -34,13 +34,13 @@ After this function, in the directory we have specified, all model artifacts wil
 - `runtime.yaml`: This file contains information that is needed to set up the runtime environment on the deployment server. It has information about which conda environment was used to train the model, and what environment should be used to deploy the model. The file also specifies what version of Python should be used.
 - **`score.py`**: This script contains the `load_model()` and `predict()` functions. The `load_model()` function understands the format the model file was saved in and loads it into memory. The `.predict()` method is used to make inferences in a deployed model. There are also hooks that allow you to perform operations before and after inference. You can modify this script to fit your specific needs.
 
-![](./images/modelartifacts.png)
+![model artifacts](./images/modelartifacts.png)
 
 Once all artifacts have been created, we can check the model's metadata:
 
-![](./images/runtime_info.png)
+![runtime info](./images/runtime_info.png)
 
-![](./images/schema_input.png)
+![schema input](./images/schema_input.png)
 
 ## Task 3: Testing Model
 
@@ -49,13 +49,13 @@ If you modify the `score.py` file that is part of the model artifacts, then you 
 
 The next figure simulates a call to a deployed model without having to actually deploy the model. It passes in test values and returns the predictions:
 
-![](./images/testingmodel.png)
+![test model](./images/testingmodel.png)
 
 ## Task 4: Saving Model to Model Catalog
 
 Saving in the model catalog allows us to load this model in other Data Science environments or regions within OCI. It returns the model OCID, which we'll later need to invoke the model.
 
-![](./images/modelsave.png)
+![save model](./images/modelsave.png)
 
 
 ## Task 5: Deploy Model to the Internet
@@ -66,19 +66,19 @@ The next cell deployed the model with the default settings, except for the custo
 
 We take a look at the model's summary status to see whether everything is OK and all endpoints are available or there have been errors:
 
-![](./images/summarystatus.png)
+![summary status](./images/summarystatus.png)
 
 > Note: when a model is deployed, a Load Balancer is automatically created to support and monitor traffic and prevent the model from overloading due to receiving too many calls.
 
 These models and model deployments are accessible from the OCI Panel, and can be stopped, restarted, updated and deleted whenever we need:
 
-![](./images/models.png)
+![models](./images/models.png)
 
-![](./images/model_deployments.png)
+![model deployments](./images/model_deployments.png)
 
 From within the model deployment, we can extract the endpoint API: 
 
-![](./images/invoking_endpoint_url.png)
+![invoke endpoint url](./images/invoking_endpoint_url.png)
 
 This endpoint is the one we'll call in the following task to get prediction results from our model.
 
@@ -86,7 +86,7 @@ This endpoint is the one we'll call in the following task to get prediction resu
 
 We take the model's OCID from the previous task and make the HTTP request to get results:
 
-![](./images/invoking_endpoint.png)
+![invoke endpoint](./images/invoking_endpoint.png)
 
 We see that the model has returned ten different predictions for the 10 rows we made requests for.
 
@@ -96,7 +96,7 @@ We see that the model has returned ten different predictions for the 10 rows we 
 
 If you want to destroy the model from the catalog and OCI (also, to save money on unwanted API calls), we can call the _`.delete_model() and .delete_deployment()`_ functions:
 
-![](./images/delete_model.png)
+![delete model](./images/delete_model.png)
 
 ## Conclusions
 
@@ -118,4 +118,4 @@ If you’re curious about the goings-on of Oracle Developers in their natural ha
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 13th, 2022
+* **Last Updated By/Date** - September 26th, 2022

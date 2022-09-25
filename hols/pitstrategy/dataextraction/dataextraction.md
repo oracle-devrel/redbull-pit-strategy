@@ -1,4 +1,4 @@
-# Data Extraction
+# Lab 2: Data Extraction
 
 ## Introduction
 In this section of the workshop, we will focus on how to extract **meaningful** data, how to perform requests to a Python library (that will help us obtain all this data) and how to save this information into **persistent** files that we can re-use over and over.

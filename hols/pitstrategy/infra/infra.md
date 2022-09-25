@@ -1,4 +1,4 @@
-# Infrastructure
+# Lab 1: Infrastructure
 
 ## Introduction
 

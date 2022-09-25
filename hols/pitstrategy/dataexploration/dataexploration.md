@@ -1,4 +1,4 @@
-# Data Exploration
+# Lab 3: Data Exploration
 
 ## Introduction
 

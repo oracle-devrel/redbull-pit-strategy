@@ -3,48 +3,48 @@
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
-      "title": "Get Started",
-      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
-    },
-    {
-      "title": "Lab 1: Introduction",
+      "title": "Introduction",
       "description": "Introduction",
       "filename": "../../pitstrategy/intro/intro.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 2: Infrastructure",
+      "title": "Get Started",
+      "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
+    },
+    {
+      "title": "Lab 1: Infrastructure",
       "description": "Infrastructure",
       "filename": "../../pitstrategy/infra/infra.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 3: Data Extraction",
+      "title": "Lab 2: Data Extraction",
       "description": "Data Extraction",
       "filename": "../../pitstrategy/dataextraction/dataextraction.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 4: Data Exploration",
+      "title": "Lab 3: Data Exploration",
       "description": "Data Exploration",
       "filename": "../../pitstrategy/dataexploration/dataexploration.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 5: Data Merging",
+      "title": "Lab 4: Data Merging",
       "description": "Data Merging",
       "filename": "../../pitstrategy/datamerging/datamerging.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 6: Model Training",
+      "title": "Lab 5: Model Training",
       "description": "Model Training",
       "filename": "../../pitstrategy/modeltraining/modeltraining.md",
       "type": "dbcs"
     },
     {
-      "title": "Lab 7: Model Deployment",
+      "title": "Lab 6: Model Deployment",
       "description": "Model Deployment",
       "filename": "../../pitstrategy/modeldeployment/modeldeployment.md",
       "type": "dbcs"
