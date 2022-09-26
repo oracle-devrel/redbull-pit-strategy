@@ -23,7 +23,7 @@ Once we have both things, and since **timestamps** from both tables have informa
 
 > Note that this task takes about 11 minutes to run with 8 OCPU (16 vcpus).
 
-## Task 2: Expanding df_lapWeather with Position and GridPosition -> df_agg
+## Task 2: Expanding `df_lapWeather` with Position and GridPosition -> `df_agg`
 
 At this point of the lab, we have lap data available, and also weather data combined with it.
 
