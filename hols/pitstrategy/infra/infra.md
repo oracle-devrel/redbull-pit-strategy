@@ -82,7 +82,7 @@ Estimated Lab Time: 15 minutes
 
 6. Finally, edit the last variable _`desired_number_cpus`_. It determines the number of OCPUs to use in the Data Science environment. Recommended size is a value from 1 to 4 for this workshop.
 
-    ![](images/desired_num_ocpus.png)
+    ![desired number of ocpus](images/desired_num_ocpus.png)
 
 
 7. Save the file in the Code Editor.
@@ -123,23 +123,23 @@ Having just created our OCI Data Science environment, we need to install the nec
 
 - (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
 
-    ![](./images/select_data_science.png)
+    ![select data science](./images/select_data_science.png)
 
     > You may find the Data Science section by also searching in the top left bar, or in the Analytics & AI tab, if it doesn't appear in "Recently visited" for you:
 
-    ![](images/analyticstab.png)
+    ![analytics tab](images/analyticstab.png)
 
     Now, we have access to a [list of our Data Science projects launched within OCI.](https://cloud.oracle.com/data-science/projects) We access our project, and inside our project we'll find the notebook.
 
     > The name of the notebook may be different than shown here in the screenshot.
 
-    ![](./images/open-notebook.png)
+    ![open notebook - 1](./images/open-notebook.png)
 
-    ![](./images/open-notebook2.png)
+    ![open notebook - 2](./images/open-notebook2.png)
 
     You should now see the Jupyter environment
 
-    ![](./images/notebook.png)
+    ![notebook](./images/notebook.png)
 
 
 
@@ -149,7 +149,7 @@ Having just created our OCI Data Science environment, we need to install the nec
 We now need to load our notebook into our environment. For that, we have two options:
 1. **Option 1 (Recommended)**: Opening a **Terminal** inside the _'Other'_ section the console and re-downloading the repository again:
 
-    ![](./images/open_terminal.png)
+    ![open terminal](./images/open_terminal.png)
 
     Then, we re-clone the repository using this command:
 
@@ -163,7 +163,7 @@ We now need to load our notebook into our environment. For that, we have two opt
     <copy>odsc conda create -n myconda</copy>
     ```
 
-    ![](./images/proceed.png)
+    ![proceed](./images/proceed.png)
 
     Finally, execute these commands to install required Python dependencies:
 
@@ -182,14 +182,14 @@ We now need to load our notebook into our environment. For that, we have two opt
     
 2. **Option 2**: Using the upload button to transfer the [repository's contents](https://github.com/oracle-devrel/redbull-pit-strategy/tree/dev) from our own computer locally, we use the upload button to transfer the files:
 
-    ![](./images/upload.jpg)
+    ![upload](./images/upload.jpg)
 
 
 ## Task 6: Accessing our Notebooks
 
 Once we've re-downloaded the repository (or used the upload button to transfer the notebooks), we should see the repository / files in our file explorer:
 
-![](./images/file_explorer.png)
+![file explorer](./images/file_explorer.png)
 
 We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each one of the notebooks. This is the list of notebooks we will review:
 - [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
@@ -206,4 +206,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 16th, 2022
+* **Last Updated By/Date** - September 26th, 2022

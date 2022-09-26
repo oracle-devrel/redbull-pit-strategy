@@ -25,7 +25,7 @@ The first thing we need to consider is that our final dataset called _`final_dat
 
 Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five rounds. Therefore, if the model were to predict '2', for example, then the optimal pit window would be in the range of [2*5=10, 3*5=15], as each bucket is made of 5 rounds.
 
-![](./images/c_task1_loading_data.png)
+![loading data](./images/c_task1_loading_data.png)
 
 
 > Note that we have about 1250 rows of data for ~4.5 years of data after all this process. If we also remove 'NaN' values (e.g. slope and bias for fuel / tyre degradation are NaN) we get about 200-300 rows of data. Therefore, we *will consider* NaN values as we otherwise would almost run out of data, and find a way to deal with these indeterminate values in other ways.
@@ -37,9 +37,9 @@ Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five 
 
 We print variable correlations with _`x[columns].corr()`_ and see the relationship between variables. This is useful to get some initial idea on which variables could be good to select for our ML model.
 
-![](./images/c_task2_corr.png)
+![variable correlations](./images/c_task2_corr.png)
 
-![](./images/c_task2_visualizations.png)
+![some visualizations](./images/c_task2_visualizations.png)
 
 Looking at tyre compound for the first stint, we have a lot of medium and softs; we don't need to filter C1, C2 tyre compounds (which are different soft compounds, for example) because the dataset we have also makes this distinction with hypersoft, ultrasoft, supersoft and simply soft to distinguish the types of compounds.
 
@@ -47,9 +47,9 @@ We can also notice that, the higher the stint length, the smaller the probabilit
 
 Finally, we try to observe the track temperature compared to stint length, to see if staying longer on the track without interruption would increase the track temperature over time. However, it's hard to observe any correlation, there are some data points that seem correlated but since track temperature is affected by multiple cars' tyres at different times, the conclusion is that there is no apparent correlation:
 
-![](./images/c_task2_visualization_meantracktemp.png)
+![visualize mean track temperature](./images/c_task2_visualization_meantracktemp.png)
 
-## Task 3: Model Building
+## Task 3: Build ML Model
 
 In order to build the model, we do the following things:
 - Select the variables that will be considered by our model
@@ -57,31 +57,31 @@ In order to build the model, we do the following things:
 - Create a label encoder to convert words / categorical variables into numbers that the model will understand
 - Apply label encoder to the list of categorical variables in our selected subset of variables
 
-![](./images/c_task3_modelbuilding.png)
+![build model](./images/c_task3_modelbuilding.png)
 
 Once we have that, we perform train-test splitting. This means we will divide our dataset's total rows into a testing set (usually around 20%) and a training set (around 80%). The train set will be used to train the model and the test set to validate the accuracy / performance of the model after the model has been trained:
 
-![](./images/c_task3_traintest.png)
+![train-test split](./images/c_task3_traintest.png)
 
 ## Task 4: Regression Model
 
 After all our variables are set, standardized, encoded, and our dataset has been split into train/test chunks, we'll create our first model. We'll use a tree-based model, LGBM (Light Gradient Boosted Model).
 
-![](./images/c_task4_regression.png)
+![regression](./images/c_task4_regression.png)
 
 We can see which variables are considered as _important_ by the model by looking at feature importances. The closer the feature importance is to 1, the better.
 
-![](./images/c_task4_feature_importances.png)
+![feature importances](./images/c_task4_feature_importances.png)
 
 We can compare the test values (_`y_pred`_) versus true ones (_`y_test_reg`_) and plot them in a graph, to see how far off each prediction is:
 
-![](./images/c_task4_plot.png)
+![prediction vs. real](./images/c_task4_plot.png)
 
 ## Task 5: Testing Residuals
 
 Now, we have information about the MAE for our regression model. However, it's also *crucial* to observe how far each prediction is from reality.
 
-![](./images/c_task5_residuals.png)
+![residuals analysis](./images/c_task5_residuals.png)
 
 > The above left figure shows the absolute value of residuals. Looking at this, we can observe the amount of errors in each prediction. We see that the figure is very skewed towards the left, which means that most errors are constrained in the range of [0, 5] laps from the true value, and a big part of all these errors in the [0.0, 2.5] range, which means that our model, even though it makes errors, makes relatively "close" errors to reality. 
 <br>
@@ -93,11 +93,11 @@ Now that we have a regression model trained, we're going to focus on how to trai
 
 We create two different models (LGBM and XGB) with the same initial hyperparameters; and for each model, we will fit our model, calculate accuracy (as this is a classifier), and some additional metrics.
 
-![](./images/c_task6_pipeline.png)
+![pipeline - 1](./images/c_task6_pipeline.png)
 
 And we can observe the characteristics of our pipeline: the set of encoders, standardizers, variables, and hyperparameters of our model.
 
-![](./images/c_task6_pipeline_2.png)
+![pipeline - 2](./images/c_task6_pipeline_2.png)
 
 > This is especially useful for production environments because it allows for small changes without having to modify big chunks of code.
 
@@ -106,17 +106,17 @@ And we can observe the characteristics of our pipeline: the set of encoders, sta
 
 Using the classifier model (already trained using the pipeline), we can make a test request and see the category that it would land on, and the probability (every class' probability sums to 1 in total) of the prediction:
 
-![](./images/c_task7_prediction.png)
+![test prediction](./images/c_task7_prediction.png)
 
 With the confusion matrix, we can see which values were predicted, and which ones were true. In our case, there's a pronounced diagonal (we can see with the heatmap). This means that the model made relatively good predictions, most of them were what they were supposed to be.
 
-![](./images/c_task7_prediction.png)
+![confusion matrix](./images/c_task7_confusionmatrix.png)
 
 ## Task 8: Saving Model
 
 Finally, we save the model in pickle file; and we'll use this pickle file to deploy the model to the Internet in the next and final chapter.
 
-![](./images/c_task7_savemodel.png)
+![save model](./images/c_task7_savemodel.png)
 
 ## Conclusions
 
@@ -137,4 +137,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 13th, 2022
+* **Last Updated By/Date** - September 26th, 2022

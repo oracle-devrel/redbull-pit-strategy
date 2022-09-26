@@ -36,21 +36,21 @@ Weather data provides the following data channels per sample:
 
 We load our previously-concatenated data (in the last chapter) and add an additional column called eventYear:
 
-![](./images/task1_event_year.png)
+![event year](./images/task1_event_year.png)
 
 Then, we plot the average weather for every race in our dataset for the last year, and make use of our new column `eventYear` to filter only year 2021:
 
-![](./images/task1_average_weather.png)
+![average weather](./images/task1_average_weather.png)
 
 Then, we aim to see what happens in extreme cases. For that, we'll print the coldest raining races for the last year. For that, we need to average weather conditions again, filter when Rainfall is true, for year 2021, and when the session is a race:
 
-![](./images/task1_coldest_races.png)
+![coldest races](./images/task1_coldest_races.png)
 
 As we can observe, track temperature is always a bit hotter than the air temperature (in Celsius). It's useful to know that there are some races where temperature drops below 10ºC.
 
 Finally, we plot average air temperature, track temperature and humidity percentages for two races: Abu Dhabi and the Austrian GP.
 
-![](./images/task1_averages.png)
+![averages](./images/task1_averages.png)
 
 This is useful in case we need to take a visual look at specific data within our dataset: these visualizations can be adjusted to fit any type of race, Grand Prix, session, and weather conditions.
 
@@ -86,7 +86,7 @@ This dataset is also very complete, however we'll filter out our data based on s
 - Teams don't all have the same strategy due to different car designs. Therefore, we should only consider data coming from Oracle RedBull.
 - Practice sessions are often used by teams to get used to car setups and the circuit where they'll be competing. Therefore, we shouldn't consider these sessions, as they are not as competitive as qualifying and the race.
 
-![](./images/task2_filter.png)
+![filter](./images/task2_filter.png)
 
 ## Task 3: Lap Data Exploration
 
@@ -130,11 +130,11 @@ Our laps dataset contains the following variables:
 
 However, we only want a subset of these variables. Additionally, we'll only **select RedBull** laps as discussed.
 
-![](./images/task3_filter.png)
+![filter](./images/task3_filter.png)
 
 In order to check the consistency of our data between data objects (Lap data and Results data), we'll check if the best qualifying time for a driver is the same in both cases. It allows us to check inconsistencies in between files and fix them if needed. We'll test with Sergio Perez's data for the Abu Dhabi Grand Prix, in 2021.
 
-![](./images/task3_check_consistency.png)
+![check consistency](./images/task3_check_consistency.png)
 
 As we can observe, Sergio's data is consistent within datasets. 
 > Note: this is only an example. There are some instances where there are some inconsistencies between datasets. In the following chapters, we'll cover how we've dealt with these inconsistencies.
@@ -150,4 +150,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 7th, 2022
+* **Last Updated By/Date** - September 26th, 2022

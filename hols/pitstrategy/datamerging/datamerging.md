@@ -19,7 +19,7 @@ We group lap data by (event, team, session, driver), then we go to weather data 
 
 Once we have both things, and since **timestamps** from both tables have information that don't __quite__ match, we use the function _`pd.merge_asof()`_ to find the __nearest/closest__ possible time between two tables, and merge them based on the nearest timestamps; and we combine both tables.
 
-![](./images/task1_merge.png)
+![merge](./images/task1_merge.png)
 
 > Note that this task takes about 11 minutes to run with 8 OCPU (16 vcpus).
 
@@ -36,9 +36,9 @@ Therefore, we must **summarize** it in some way, and obtain a numerical value th
 
 As a conclusion, we should have the **same level of granularity** from both datasets, in order to merge them properly. 
 
-![](./images/task2_1.png)
+![create function](./images/task2_1.png)
 
-![](./images/task2_2.png)
+![invoke function](./images/task2_2.png)
 
 > Note that this task takes about 10-15 minutes to run with 8 OCPU (16 vcpus).
 
@@ -51,7 +51,7 @@ We add and complement our _`df_agg`_ dataset with these two additional columns. 
 
 Finally, we create a CSV file with almost all things we need to be done with the data merging process.
 
-![](./images/task3.png)
+![add track information](./images/task3.png)
 
 
 ## Task 4: Tyre Degradation and Fuel Adjustment Lines
@@ -62,33 +62,33 @@ Considering that _`y = mx + b`_, we will consider m as the slope and b as the bi
 
 Just for visualization purposes, the following _`-2<delta-lapTime<2`_ figure looks at what happens when two consecutive laps occur, and what is the time delta (the absolute value of the difference of both lap times) in seconds, where the maximum lap time delta is within -2 and 2 seconds of the next one:
 
-![](./images/task4_delta_laptime.png)
+![delta laptime](./images/task4_delta_laptime.png)
 
 Now, we will filter out rows that don't have **enough** valuable data: these will be stints (period between one pit stop and the next one) where the number of laps run is less than **5**. We will consider 5 as our threshold value to determine if this is data we can consider into our final dataset or not.
 
-![](./images/task4_stint_length.png)
+![stint length](./images/task4_stint_length.png)
 
 Finally, from this reduced dataset, with only more than 5 laps per stint, we'll calculate their linear regression parameters **m** and **b** as mentioned. For that, we create two auxiliary functions for calculating fuel and tyre degradation lines and biases.
 
-![](./images/task4_fuel_line.png)
+![fuel line](./images/task4_fuel_line.png)
 
 Then we proceed to perform the same calculations for tyre degradation, and add their linear regression parameters to our dataset.
 
-![](./images/task4_tyre_line.png)
+![tyre line](./images/task4_tyre_line.png)
 
-![](./images/task4_tyre_line_example.png)
+![tyre line - example](./images/task4_tyre_line_example.png)
 
 ## Task 5: Final Visualizations
 
 With our final dataset, we can see that it looks like a very complete dataset with several potentially attractive variables for Machine Learning. We won't know for sure until the next chapter, but before we proceed, we plot a few sample laps from Verstappen from the Austrian Grand Prix in 2019.
 
-![](./images/task5_final_visualization_1.png)
+![final visualization - 1](./images/task5_final_visualization_1.png)
 
-![](./images/task5_final_visualization_2.png)
+![final visualization - 2](./images/task5_final_visualization_2.png)
 
 And finally we can comparedifferent stint lap times, and see their fuel lines and their **corrected lap times** (lap time minus the time lost per round due to fuel weight and tyre degradation).
 
-![](./images/task5_final_visualization_3.png)
+![final visualization - 3](./images/task5_final_visualization_3.png)
 
 > Note: In the above figure, we can see that in the same race, both drivers pitted at similar times, although Verstappen pitted a bit earlier (about 4 laps earlier on average). Also, we observe that Leclerc's last stint has a very high slope, which indicates that the lap times weren't great compared to Verstappen's, even though both drivers used the same tyre strategy (soft, then medium, then medium tyres) in Bahrain in 2019. This visualization encompasses what actually happened during the race: Leclerc did the fastest race time in the 38th lap, then dropped back with higher lap times in the last stint compared to Verstappen, who sustained very consistent lap times until the end of the race. Verstappen gained 1 position and Leclerc lost 2 positions compared to their starting grid positions, as he started having problems with the engine in lap 48.
 
@@ -109,7 +109,7 @@ Therefore, we will create an **average slope and bias** based on the **average t
 
 Due to this, we'll create a function called _`func_create_lag_features`_, where we average the values from the last event into this races' degradation slopes and biases:
 
-![](./images/task6_lag_features.png)
+![lag features](./images/task6_lag_features.png)
 
 Then, we save this dataset as the final dataset (_`final_data.csv`_).
 
@@ -133,4 +133,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 10th, 2022
+* **Last Updated By/Date** - September 26th, 2022
