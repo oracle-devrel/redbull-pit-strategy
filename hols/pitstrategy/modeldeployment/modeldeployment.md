@@ -118,4 +118,4 @@ If you’re curious about the goings-on of Oracle Developers in their natural ha
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 26th, 2022
+* **Last Updated By/Date** - October 3rd, 2022
