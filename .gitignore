@@ -31,3 +31,13 @@ Temporary Items
 .crt
 .csr
 .pem
+
+# Ignore data files (recommended to have them locally only)
+data/*
+!data/circuit_length.csv
+!data/final_data.csv
+!data/semi_final_data.csv
+
+dev/terraform/terraform.tfvars
+
+notebooks/.ipynb_checkpoints/

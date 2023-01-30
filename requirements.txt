@@ -1,0 +1,14 @@
+setuptools
+wheel
+numpy
+pandas==1.2.5
+fastf1
+matplotlib
+numpy
+lightgbm
+oracle-ads
+joblib
+xgboost
+mlxtend
+seaborn
+oracle-ads[notebook]
