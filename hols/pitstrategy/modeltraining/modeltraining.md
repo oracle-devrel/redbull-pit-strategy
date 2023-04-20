@@ -23,7 +23,7 @@ The first thing we need to consider is that our final dataset called _`final_dat
 
 > You may ask why is it so important to have stint lengths in between 5 and 35 laps, and the reason is because we've already filtered out these values from previous stages in our workshop / notebooks, we didn't calculate some features (such as slope and bias) for stints with <5 laps, as these values would be unreliable. Also, we're filtering out stints with >35 laps as it's not very common in F1, therefore it would probably add more noise than help our model, if we were to consider them.
 
-Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five rounds. Therefore, if the model were to predict '2', for example, then the optimal pit window would be in the range of [2*5=10, 3*5=15], as each bucket is made of 5 rounds.
+Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five rounds. Therefore, if the model were to predict _2_, for example, then the optimal pit window would be in the range of [2\*5=10, 3\*5=15], as each bucket is made of 5 rounds.
 
 ![loading data](./images/c_task1_loading_data.png)
 
