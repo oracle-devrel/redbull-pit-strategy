@@ -12,7 +12,7 @@ Estimated Lab Time: 30 minutes
 
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Active Oracle Cloud Account with available credits to use for Data Science service.
-* [Previously created](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/hols/pitstrategy/infra/infra.md) OCI Data Science Environment
+* [Previously created](../infra/infra.md) OCI Data Science Environment
 
 ## Task 1: Loading Data
 
@@ -137,4 +137,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 26th, 2022
+* **Last Updated By/Date** - April 20th, 2023

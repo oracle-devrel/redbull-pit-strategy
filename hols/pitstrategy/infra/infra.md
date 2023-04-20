@@ -12,7 +12,7 @@ We will use Cloud Shell to execute _`start.sh`_ script that will call Terraform 
 
 Terraform is an Open Source tool to deploy resources in the cloud with code. You declare what you want in Oracle Cloud and Terraform make sure you get the resources created.
 
-Do you want to learn more? Feel free to check [Terraform's code in this repository](../../../dev/terraform/) after the workshop.
+Do you want to learn more? Feel free to check [Terraform's code in this repository](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/main/dev/terraform) after the workshop.
 
 Estimated Lab Time: 15 minutes
 
@@ -36,6 +36,7 @@ Estimated Lab Time: 15 minutes
   ![Git Clone](images/git-clone.png)
 
 4. Change directory with `cd` to `redbull-pit-strategy` directory:
+   
     ```
     <copy>cd redbull-pit-strategy/dev/</copy>
     ```
@@ -215,4 +216,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - October 6th, 2022
+* **Last Updated By/Date** - April 20th, 2023
