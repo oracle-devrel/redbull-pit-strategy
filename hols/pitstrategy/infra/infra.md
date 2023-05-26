@@ -170,7 +170,7 @@ We now need to load our notebook into our environment.
 
     ```
     <copy>
-    conda activate /home/datascience/conda/mycondav1_0
+    conda activate /home/datascience/conda/myconda_v1_0
     </copy>
     ```
 
