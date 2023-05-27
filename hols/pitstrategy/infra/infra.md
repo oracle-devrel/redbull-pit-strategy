@@ -21,14 +21,14 @@ Estimated Lab Time: 15 minutes
 * An Oracle Free Tier, Paid or LiveLabs Cloud Account
 * Active Oracle Cloud Account with available credits to use for Data Science service.
 
-
 ## Task 1: Cloud Shell
 
 1. From the Oracle Cloud Console, click on **Cloud Shell**.
   ![Cloud Shell Button](images/cloud-shell-button.png)
 
 2. As soon as the Cloud Shell is loaded, you can download the assets to run this lab.
-    ```
+
+    ```bash
     <copy>git clone --branch dev https://github.com/oracle-devrel/redbull-pit-strategy.git</copy>
     ```
 
@@ -36,13 +36,14 @@ Estimated Lab Time: 15 minutes
   ![Git Clone](images/git-clone.png)
 
 4. Change directory with `cd` to `redbull-pit-strategy` directory:
-   
-    ```
+
+    ```bash
     <copy>cd redbull-pit-strategy/dev/</copy>
     ```
+
 5. Terraform use a file called `tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to copy a template we provide to use your own values. Run on Cloud Shell the following command.
 
-    ```
+    ```bash
     <copy>cp terraform/terraform.tfvars.template terraform/terraform.tfvars</copy>
     ```
 
@@ -51,23 +52,26 @@ Estimated Lab Time: 15 minutes
 1. Click on **Code Editor**. Next to the Cloud Shell one.
     ![Cloud Code Editor](images/cloud-code-editor.png)
 
-2. On the **Code Editor**, inside the Explorer section on the left panel, expand your username and navigate onto _`dev/terraform`_. You should see the file **`terraform.tfvars`**. Click on it: 
+2. On the **Code Editor**, inside the Explorer section on the left panel, expand your username and navigate onto _`dev/terraform`_. You should see the file **`terraform.tfvars`**. Click on it:
+
     ![Go To File](images/code-editor-go-to-file.png)
 
 3. The file will open and you can copy values you will get from running commands on Cloud Shell and paste it on the Code Editor.
 
 4. Copy the output of the following command as the tenancy OCID:
-    ```
+
+    ```bash
     <copy>echo $OCI_TENANCY</copy>
     ```
 
     ![Paste Tenancy OCID](images/paste-tenancy-ocid.png)
 
 5. Copy the output of the same command as the compartment OCID:
-    ```
+
+    ```bash
     <copy>echo $OCI_TENANCY</copy>
     ```
-    
+
     > Note: we can paste the same OCID here in both tenancy and compartment because the root compartment in a tenancy is equal to the tenancy's OCID.
 
     ![Paste Compartment OCID](images/paste-compartment-ocid.png)
@@ -85,15 +89,14 @@ Estimated Lab Time: 15 minutes
 
     ![desired number of ocpus](images/desired_num_ocpus.png)
 
-
 7. Save the file in the Code Editor.
     ![Code Editor Save](images/code-editor-save.png)
-
 
 ## Task 3: Start Deployment
 
 1. Run the `start.sh` script
-    ```
+
+    ```bash
     <copy>./start.sh</copy>
     ```
 
@@ -111,18 +114,17 @@ Estimated Lab Time: 15 minutes
 
     > Note: login credentials for the Data Science notebook are the same as the ones used to access Oracle Cloud Infrastructure.
 
-
 ## Task 4: Accessing Notebook
 
 Having just created our OCI Data Science environment, we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
 
-- The easiest way is to access into the notebook **through the URL** that we previously copied from Terraform's output.
+* The easiest way is to access into the notebook **through the URL** that we previously copied from Terraform's output.
 
     ![Start SH output](images/start-sh-ssh.png)
 
     If you have done it this way, make sure to **skip through to the next task**.
 
-- (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
+* (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
 
     ![select data science](./images/select_data_science.png)
 
@@ -142,9 +144,6 @@ Having just created our OCI Data Science environment, we need to install the nec
 
     ![notebook](./images/notebook.png)
 
-
-
-
 ## Task 5: Setting up Data Science Environment
 
 We now need to load our notebook into our environment.
@@ -154,13 +153,13 @@ We now need to load our notebook into our environment.
 
 2. Then, we re-clone the repository:
 
-    ```
+    ```bash
     <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy --branch dev</copy>
     ```
 
 3. Install the conda environment
 
-    ```
+    ```bash
     <copy>odsc conda create -n myconda</copy>
     ```
 
@@ -168,7 +167,7 @@ We now need to load our notebook into our environment.
 
 4. Activate the newly-created conda environment:
 
-    ```
+    ```bash
     <copy>
     conda activate /home/datascience/conda/myconda_v1_0
     </copy>
@@ -176,7 +175,7 @@ We now need to load our notebook into our environment.
 
 5. Install Python 3.8 within the conda environment:
 
-    ```
+    ```bash
     <copy>
     conda install -y python=3.8
     </copy>
@@ -184,7 +183,7 @@ We now need to load our notebook into our environment.
 
 6. Install Python dependencies:
 
-    ```
+    ```bash
     <copy>
     pip install -r redbull-pit-strategy/requirements.txt
     </copy>
@@ -194,7 +193,6 @@ We now need to load our notebook into our environment.
 
 After these commands, all requirements will be fulfilled and we're ready to execute our notebooks with our newly created conda environment.
 
-
 ## Task 6: Accessing our Notebooks
 
 Once we've re-downloaded the repository (or used the upload button to transfer the notebooks), we should see the repository / files in our file explorer:
@@ -202,12 +200,12 @@ Once we've re-downloaded the repository (or used the upload button to transfer t
 ![file explorer](./images/file_explorer.png)
 
 We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each one of the notebooks. This is the list of notebooks we will review:
-- [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
-- [_`01 data exploration.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/01%20data%20exploration.ipynb)
-- [_`02 merge data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/02%20merge%20data.ipynb)
-- [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
--  [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
 
+* [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
+* [_`01 data exploration.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/01%20data%20exploration.ipynb)
+* [_`02 merge data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/02%20merge%20data.ipynb)
+* [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
+* [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
 
 You may now [proceed to the next lab](#next).
 
@@ -216,4 +214,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - April 20th, 2023
+* **Last Updated By/Date** - May 28th, 2023
