@@ -26,7 +26,7 @@ You must have an OCI account. [Click here](https://www.oracle.com/cloud/free/?so
 This solution is designed to work with several OCI services, allowing you to quickly be up-and-running:
 * [Data Science](https://docs.oracle.com/en-us/iaas/data-science/using/data-science.htm)
 
-There are required OCI resources (see the [Terraform documentation](./terraform/README.md) for more information) that are needed for this tutorial.
+There are required OCI resources (see the [Terraform documentation](https://github.com/oracle-devrel/leagueoflegends-optimizer/blob/main/dev/README.md) for more information) that are needed for this tutorial.
 
 You may now [proceed to the next lab](#next).
 
@@ -35,4 +35,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - September 12th, 2022
+* **Last Updated By/Date** - April 20th, 2023
