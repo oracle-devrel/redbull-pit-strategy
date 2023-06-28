@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will build the infrastructure that we will use to run the rest of the workshop.
+In this lab, we will build the infrastructure that we will use to run the rest of the workshop.
 
 The main element that we will be creating is a **Data Science** session and notebook, to experiment with the newly-generated data using notebooks.
 
@@ -38,78 +38,58 @@ Estimated Lab Time: 15 minutes
 4. Change directory with `cd` to `redbull-pit-strategy` directory:
 
     ```bash
-    <copy>cd redbull-pit-strategy/dev/</copy>
-    ```
-
-5. Terraform use a file called `tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to copy a template we provide to use your own values. Run on Cloud Shell the following command.
-
-    ```bash
-    <copy>cp terraform/terraform.tfvars.template terraform/terraform.tfvars</copy>
+    <copy>cd redbull-pit-strategy</copy>
     ```
 
 ## Task 2: Deploy with Terraform
 
-1. Click on **Code Editor**. Next to the Cloud Shell one.
-    ![Cloud Code Editor](images/cloud-code-editor.png)
-
-2. On the **Code Editor**, inside the Explorer section on the left panel, expand your username and navigate onto _`dev/terraform`_. You should see the file **`terraform.tfvars`**. Click on it:
-
-    ![Go To File](images/code-editor-go-to-file.png)
-
-3. The file will open and you can copy values you will get from running commands on Cloud Shell and paste it on the Code Editor.
-
-4. Copy the output of the following command as the tenancy OCID:
+1. You are going to create a file `.env.json` that contains variables for terraform. Including the number of desired CPUs for Data Science. Run on Cloud Shell the following command:
 
     ```bash
-    <copy>echo $OCI_TENANCY</copy>
+    <copy>npx zx scripts/setenv.mjs</copy>
     ```
 
-    ![Paste Tenancy OCID](images/paste-tenancy-ocid.png)
+2. It will run a dependency check and right after ask for a compartment name. If you are in a trial, or brand new to Oracle Cloud, just leave it empty and type _ENTER_.
+    > NOTE: If you want to deploy on a specific compartment, type the name (not the OCI ID) and the compartment will be used.
 
-5. Copy the output of the same command as the compartment OCID:
+3. Then, the script will ask for the `Data Science CPU number`. Type the number 1, but feel free to indicate up to 4 CPUs.
+
+4. The script will finished.
+    ![Cloud Shell setenv](./images/cloud-shell-setenv.png)
+
+5. Terraform uses a file called `terraform.tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to use a script that will ask you for information to create the `terraform.tfvars` file for you. Run on Cloud Shell the following command:
 
     ```bash
-    <copy>echo $OCI_TENANCY</copy>
+    <copy>npx zx scripts/tfvars.mjs</copy>
     ```
 
-    > Note: we can paste the same OCID here in both tenancy and compartment because the root compartment in a tenancy is equal to the tenancy's OCID.
-
-    ![Paste Compartment OCID](images/paste-compartment-ocid.png)
-
-    > **Note only for experienced Oracle Cloud users:**<br>
-    > Do you want to deploy the infrastructure on a specific compartment?<br>
-    > You can get the Compartment OCID in different ways.<br>
-    > The coolest one is with OCI CLI from the Cloud Shell.<br>
-    > You have to change _`COMPARTMENT_NAME`_ for the actual compartment name you are looking for and run the command:
-    > ```
-    > <copy>oci iam compartment list --all --compartment-id-in-subtree true --query "data[].id" --name COMPARTMENT_NAME</copy>
-    > ```
-
-6. Finally, edit the last variable _`desired_number_cpus`_. It determines the number of OCPUs to use in the Data Science environment. Recommended size is a value from 1 to 4 for this workshop.
-
-    ![desired number of ocpus](images/desired_num_ocpus.png)
-
-7. Save the file in the Code Editor.
-    ![Code Editor Save](images/code-editor-save.png)
+6. The script will create the `terraform.tfvars` file.
+    ![Cloud Shell tfvars](./images/cloud-shell-tfvars.png)
 
 ## Task 3: Start Deployment
 
-1. Run the `start.sh` script
+1. Change directory to `dev`
+
+    ```bash
+    <copy>cd dev</copy>
+    ```
+
+2. Run the `start.sh` script
 
     ```bash
     <copy>./start.sh</copy>
     ```
 
-2. The script will run and it looks like this.
+3. The script will run and it looks like this.
     ![Start SH beginning](images/start-sh-beginning.png)
 
-3. Terraform will create resources for you, and during the process it will look like this.
+4. Terraform will create resources for you, and during the process it will look like this.
     ![Start SH terraform](images/start-sh-terraform.png)
 
-4. The final part of the script is to print the output of all the work done.
+5. The final part of the script is to print the output of all the work done.
     ![Start SH output](images/start-sh-output.png)
 
-5. Copy the Data Science notebook URL from the output variable _`ds_notebook_session`_. This is the URL we will use to connect to our Data Science environment.
+6. Copy the Data Science notebook URL from the output variable _`ds_notebook_session`_. This is the URL we will use to connect to our Data Science environment.
     ![Start SH output](images/start-sh-ssh.png)
 
     > Note: login credentials for the Data Science notebook are the same as the ones used to access Oracle Cloud Infrastructure.
