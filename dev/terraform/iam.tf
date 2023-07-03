@@ -1,4 +1,5 @@
 resource "oci_identity_policy" "datascience_vcn_policy" {
+  provider       = oci.home_region
   compartment_id = var.tenancy_ocid
   description    = "Allow Data Science service to access VCN"
   name           = "ds_access_vcn"
