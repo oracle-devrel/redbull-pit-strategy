@@ -6,11 +6,13 @@ const shell = process.env.SHELL | "/bin/zsh";
 $.shell = shell;
 $.verbose = false;
 
-const { tenancyId, desiredNumberCPUs, compartmentId } = await readEnvJson();
+const { regionName, tenancyId, desiredNumberCPUs, compartmentId } =
+  await readEnvJson();
 
 try {
   let { exitCode, stderr } =
     await $`sed 's/TENANCY_OCID/${tenancyId}/' dev/terraform/terraform.tfvars.template \
+                   | sed 's/REGION/${regionName}/' \
                    | sed 's/COMPARTMENT_OCID/${compartmentId}/' \
                    | sed 's/DESIRED_NUMBER_CPU/${desiredNumberCPUs}/' > dev/terraform/terraform.tfvars`;
   if (exitCode !== 0) {

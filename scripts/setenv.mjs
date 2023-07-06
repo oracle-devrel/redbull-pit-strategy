@@ -1,11 +1,16 @@
 #!/usr/bin/env zx
 
-import { getTenancyId, searchCompartmentIdByName } from "./lib/oci.mjs";
+import {
+  getRegions,
+  getTenancyId,
+  searchCompartmentIdByName,
+} from "./lib/oci.mjs";
 import {
   checkRequiredProgramsExist,
   setVariableFromEnvOrPrompt,
   writeEnvJson,
   readEnvJson,
+  printRegionNames,
 } from "./lib/utils.mjs";
 
 const shell = process.env.SHELL | "/bin/zsh";
@@ -22,14 +27,14 @@ const tenancyId = await getTenancyId();
 properties = { ...properties, tenancyId };
 await writeEnvJson(properties);
 
-// const regions = await getRegions();
-// const regionName = await setVariableFromEnvOrPrompt(
-//   "OCI_REGION",
-//   "OCI Region name",
-//   async () => printRegionNames(regions)
-// );
-// properties = { ...properties, regionName };
-// await writeEnvJson(properties);
+const regions = await getRegions();
+const regionName = await setVariableFromEnvOrPrompt(
+  "OCI_REGION",
+  "OCI Region name",
+  async () => printRegionNames(regions)
+);
+properties = { ...properties, regionName };
+await writeEnvJson(properties);
 
 const compartmentName = await setVariableFromEnvOrPrompt(
   "RBR_COMPARTMENT_NAME",
