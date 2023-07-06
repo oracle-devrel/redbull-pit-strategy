@@ -1,3 +1,4 @@
+region                 = "REGION"
 tenancy_ocid           = "TENANCY_OCID"
 compartment_ocid       = "COMPARTMENT_OCID"
 desired_number_cpus    = "DESIRED_NUMBER_CPU"
