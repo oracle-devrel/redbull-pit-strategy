@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Once we have our dataset ready, this notebook focuses on creating two different ML models: one _classifier_ and one _regressor_.
+Once we have our dataset ready, this notebook focuses on creating two different ML models: one **classifier** and one **regressor**.
+
 - **Regression** Model: we will predict the optimal stint length for the first stint (stintNum == 1). In other words, we'll predict when it's most optimal for the driver to pit **for the first time** in a race.
 - **Classification** Model: we will use **bucketization** as a technique to classify the optimal pit stop window. We will have 5 different buckets; and our model will predict in which of these buckets it's most optimal to pit for the first time in a race.
 
@@ -10,13 +11,14 @@ Estimated Lab Time: 30 minutes
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
-* [Previously created](../infra/infra.md) OCI Data Science Environment
+- An Oracle Free Tier, Paid or LiveLabs Cloud Account
+- Active Oracle Cloud Account with available credits to use for Data Science service.
+- [Previously created](../infra/infra.md) OCI Data Science Environment
 
 ## Task 1: Loading Data
 
 The first thing we need to consider is that our final dataset called _`final_data.csv`_ contains data for all stints during races. Since, for both models, we're trying to predict only the optimal first stint length, we'll have to apply _filtering_ to our dataset to remove all data points in our dataset that:
+
 - Have a stint length of less than 5 rounds
 - Have a stint length of more than 35 rounds
 - Isn't the first stint in the race
@@ -27,11 +29,9 @@ Moreover, we apply bucketization to the _`StintLen`_ variable in groups of five 
 
 ![loading data](./images/c_task1_loading_data.png)
 
-
-> Note that we have about 1250 rows of data for ~4.5 years of data after all this process. If we also remove 'NaN' values (e.g. slope and bias for fuel / tyre degradation are NaN) we get about 200-300 rows of data. Therefore, we *will consider* NaN values as we otherwise would almost run out of data, and find a way to deal with these indeterminate values in other ways.
+> Note that we have about 1250 rows of data for ~4.5 years of data after all this process. If we also remove 'NaN' values (e.g. slope and bias for fuel / tyre degradation are NaN) we get about 200-300 rows of data. Therefore, we _will consider_ NaN values as we otherwise would almost run out of data, and find a way to deal with these indeterminate values in other ways.
 <br>
-
-> **IMPORTANT**: Also note that we'll be using gradient boosted decision trees (XGBM and LGBM models) as our model to solve this, as **they accept NaN values** and this doesn't affect the decision making of these trees. 
+> **IMPORTANT**: Also note that we'll be using gradient boosted decision trees (XGBM and LGBM models) as our model to solve this, as **they accept NaN values** and this doesn't affect the decision making of these trees.
 
 ## Task 2: Variable Correlations and Visualizations
 
@@ -52,6 +52,7 @@ Finally, we try to observe the track temperature compared to stint length, to se
 ## Task 3: Build ML Model
 
 In order to build the model, we do the following things:
+
 - Select the variables that will be considered by our model
 - Create a standard scaler to scale numerical values into scaled values, in a way that no variable will be considered as "more important" just for having greater average values than other variable
 - Create a label encoder to convert words / categorical variables into numbers that the model will understand
@@ -79,11 +80,11 @@ We can compare the test values (_`y_pred`_) versus true ones (_`y_test_reg`_) an
 
 ## Task 5: Testing Residuals
 
-Now, we have information about the MAE for our regression model. However, it's also *crucial* to observe how far each prediction is from reality.
+Now, we have information about the MAE for our regression model. However, it's also _crucial_ to observe how far each prediction is from reality.
 
 ![residuals analysis](./images/c_task5_residuals.png)
 
-> The above left figure shows the absolute value of residuals. Looking at this, we can observe the amount of errors in each prediction. We see that the figure is very skewed towards the left, which means that most errors are constrained in the range of [0, 5] laps from the true value, and a big part of all these errors in the [0.0, 2.5] range, which means that our model, even though it makes errors, makes relatively "close" errors to reality. 
+> The above left figure shows the absolute value of residuals. Looking at this, we can observe the amount of errors in each prediction. We see that the figure is very skewed towards the left, which means that most errors are constrained in the range of [0, 5] laps from the true value, and a big part of all these errors in the [0.0, 2.5] range, which means that our model, even though it makes errors, makes relatively "close" errors to reality.
 <br>
 > In the above right picture, we have another way to visualize this in percentages: we can see how many % of errors are accumulated in a specific range, e.g. if we look at the '5.0' value in the *x* axis, we see that 80% of **all** errors are within this range ([0, 5]); and 60% of all errors are within the range of (0, 2.5), which means that most errors from the model aren't that far apart from true values. This allows us to conclude that our model is accurate, and this measurement can complement the baseline accuracy of the model (several Data Science problems focus only on baseline model accuracy without looking at residuals).
 
@@ -100,7 +101,6 @@ And we can observe the characteristics of our pipeline: the set of encoders, sta
 ![pipeline - 2](./images/c_task6_pipeline_2.png)
 
 > This is especially useful for production environments because it allows for small changes without having to modify big chunks of code.
-
 
 ## Task 7: Testing Model
 
@@ -121,10 +121,11 @@ Finally, we save the model in pickle file; and we'll use this pickle file to dep
 ## Conclusions
 
 In this chapter, we have:
+
 - Created two models (one regressor, one classifier)
 - Learned how to visualize variable correlations
 - Learned how to test residuals - a very underrated and often overlooked technique
-- Using *pipelines* to simplify ML development
+- Using _pipelines_ to simplify ML development
 - Tested our model
 - Saved our model
 
@@ -137,4 +138,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - April 20th, 2023
+* **Last Updated By/Date** - July 17th, 2023

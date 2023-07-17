@@ -12,7 +12,6 @@ Estimated Lab Time: 20 minutes
 * Active Oracle Cloud Account with available credits to use for Data Science service.
 * [Previously created](../infra/infra.md) OCI Data Science Environment
 
-
 ## Task 1: Loading Model
 
 We load the saved model in pickle format.
@@ -28,11 +27,12 @@ Once we have our SklearnModel() object, we need to prepare the object with _`.pr
 We also specify which variables are expected as inputs to the model and which one to predict, through _`X_sample`_ and _`y_sample`_.
 
 After this function, in the directory we have specified, all model artifacts will be created. Most important artifacts are:
-- `input_schema.json`: A JSON file that defines the nature of the features of the `X_sample` data. It includes metadata such as the data type, name, constraints, summary statistics, feature type, and more.
-- `model.joblib`: This is the default filename of the serialized model. It can be changed with the `model_file_name` attribute. By default, the model is stored in a joblib file. The parameter `as_onnx` can be used to save it in the ONNX format.
-- `output_schema.json`: A JSON file that defines the nature of the dependent variable in the `y_sample` data. It includes metadata such as the data type, name, constraints, summary statistics, feature type, and more.
-- `runtime.yaml`: This file contains information that is needed to set up the runtime environment on the deployment server. It has information about which conda environment was used to train the model, and what environment should be used to deploy the model. The file also specifies what version of Python should be used.
-- **`score.py`**: This script contains the `load_model()` and `predict()` functions. The `load_model()` function understands the format the model file was saved in and loads it into memory. The `.predict()` method is used to make inferences in a deployed model. There are also hooks that allow you to perform operations before and after inference. You can modify this script to fit your specific needs.
+
+* `input_schema.json`: A JSON file that defines the nature of the features of the `X_sample` data. It includes metadata such as the data type, name, constraints, summary statistics, feature type, and more.
+* `model.joblib`: This is the default filename of the serialized model. It can be changed with the `model_file_name` attribute. By default, the model is stored in a joblib file. The parameter `as_onnx` can be used to save it in the ONNX format.
+* `output_schema.json`: A JSON file that defines the nature of the dependent variable in the `y_sample` data. It includes metadata such as the data type, name, constraints, summary statistics, feature type, and more.
+* `runtime.yaml`: This file contains information that is needed to set up the runtime environment on the deployment server. It has information about which conda environment was used to train the model, and what environment should be used to deploy the model. The file also specifies what version of Python should be used.
+* _`score.py`_: This script contains the `load_model()` and `predict()` functions. The `load_model()` function understands the format the model file was saved in and loads it into memory. The `.predict()` method is used to make inferences in a deployed model. There are also hooks that allow you to perform operations before and after inference. You can modify this script to fit your specific needs.
 
 ![model artifacts](./images/modelartifacts.png)
 
@@ -43,7 +43,6 @@ Once all artifacts have been created, we can check the model's metadata:
 ![schema input](./images/schema_input.png)
 
 ## Task 3: Testing Model
-
 
 If you modify the `score.py` file that is part of the model artifacts, then you should verify it. The verify step allows you to test those changes without having to deploy the model. This allows you to debug your code without having to save the model to the model catalog and then deploy it. The `.verify()` method takes a set of test parameters and performs the prediction by calling the `predict` function in `score.py`. It also runs the `load_model` function.
 
@@ -56,7 +55,6 @@ The next figure simulates a call to a deployed model without having to actually 
 Saving in the model catalog allows us to load this model in other Data Science environments or regions within OCI. It returns the model OCID, which we'll later need to invoke the model.
 
 ![save model](./images/modelsave.png)
-
 
 ## Task 5: Deploy Model to the Internet
 
@@ -102,20 +100,12 @@ If you want to destroy the model from the catalog and OCI (also, to save money o
 
 In this chapter, we have learned how to deploy an already-created Machine Learning model.
 
-I hope this workshop was useful for everybody, and we'll see you in the upcoming workshops!
+I hope this workshop was useful for everybody, you learned a lot about Formula 1 and the ins-and-outs of what a Data Science deals with in this environment. And hopefully this has taught you about the world of applied AI & Machine Learning.
 
-### How can I get started on OCI?
-
-Remember that you can always sign up for free with OCI! Your Oracle Cloud account provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible OCI services for up to 30 days. These Always Free services are available for an **unlimited** period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first. You can [sign up here for free](https://signup.cloud.oracle.com/?language=en&sourceType=:ow:de:te::::&intcmp=:ow:de:te::::).
-
-### Join the conversation!
-
-If you’re curious about the goings-on of Oracle Developers in their natural habitat, come [join us on our public Slack channel](https://bit.ly/devrel_slack)! We don’t mind being your fish bowl 🐠
-
-
+I'll see you in the upcoming workshops!
 
 ## Acknowledgements
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - April 20th, 2023
+* **Last Updated By/Date** - July 17th, 2023

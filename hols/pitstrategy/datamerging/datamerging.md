@@ -12,12 +12,11 @@ Estimated Lab Time: 20 minutes
 * Active Oracle Cloud Account with available credits to use for Data Science service.
 * [Previously created](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/hols/pitstrategy/infra/infra.md) OCI Data Science Environment
 
-
 ## Task 1: Merging Weather and Lap Data -> df_lapWeather
 
 We group lap data by (event, team, session, driver), then we go to weather data and extract relevant weather information.
 
-Once we have both things, and since **timestamps** from both tables have information that don't __quite__ match, we use the function _`pd.merge_asof()`_ to find the __nearest/closest__ possible time between two tables, and merge them based on the nearest timestamps; and we combine both tables.
+Once we have both things, and since **timestamps** from both tables have information that don't **quite** match, we use the function _`pd.merge_asof()`_ to find the **closest** possible time between two tables, and merge them based on the nearest timestamps; and we combine both tables.
 
 ![merge](./images/task1_merge.png)
 
@@ -34,14 +33,13 @@ To do that, we take the best qualifying time, grid position, position, and then 
 Therefore, we must **summarize** it in some way, and obtain a numerical value that represents a whole race
 > For example, instead of having fifteen different temperatures for one stint; we should have the average weather conditions during the stint.
 
-As a conclusion, we should have the **same level of granularity** from both datasets, in order to merge them properly. 
+As a conclusion, we should have the **same level of granularity** from both datasets, in order to merge them properly.
 
 ![create function](./images/task2_1.png)
 
 ![invoke function](./images/task2_2.png)
 
 > Note that this task takes about 10-15 minutes to run with 8 OCPU (16 vcpus).
-
 
 ## Task 3: Add Track Information to df_agg
 
@@ -53,12 +51,11 @@ Finally, we create a CSV file with almost all things we need to be done with the
 
 ![add track information](./images/task3.png)
 
-
 ## Task 4: Tyre Degradation and Fuel Adjustment Lines
 
-For our dataset, we will also calculate the __slope__ and __bias__ for tyre degradation and fuel adjustment in a linear regression model. 
+For our dataset, we will also calculate the **slope** and **bias** for tyre degradation and fuel adjustment in a linear regression model.
 
-Considering that _`y = mx + b`_, we will consider m as the slope and b as the bias to calculate. 
+Considering that _`y = mx + b`_, we will consider m as the slope and b as the bias to calculate.
 
 Just for visualization purposes, the following _`-2<delta-lapTime<2`_ figure looks at what happens when two consecutive laps occur, and what is the time delta (the absolute value of the difference of both lap times) in seconds, where the maximum lap time delta is within -2 and 2 seconds of the next one:
 
@@ -90,10 +87,9 @@ And finally we can comparedifferent stint lap times, and see their fuel lines an
 
 ![final visualization - 3](./images/task5_final_visualization_3.png)
 
-> Note: In the above figure, we can see that in the same race, both drivers pitted at similar times, although Verstappen pitted a bit earlier (about 4 laps earlier on average). Also, we observe that Leclerc's last stint has a very high slope, which indicates that the lap times weren't great compared to Verstappen's, even though both drivers used the same tyre strategy (soft, then medium, then medium tyres) in Bahrain in 2019. This visualization encompasses what actually happened during the race: Leclerc did the fastest race time in the 38th lap, then dropped back with higher lap times in the last stint compared to Verstappen, who sustained very consistent lap times until the end of the race. Verstappen gained 1 position and Leclerc lost 2 positions compared to their starting grid positions, as he started having problems with the engine in lap 48.
+> **Note**: In the above figure, we can see that in the same race, both drivers pitted at similar times, although Verstappen pitted a bit earlier (about 4 laps earlier on average). Also, we observe that Leclerc's last stint has a very high slope, which indicates that the lap times weren't great compared to Verstappen's, even though both drivers used the same tyre strategy (soft, then medium, then medium tyres) in Bahrain in 2019. This visualization encompasses what actually happened during the race: Leclerc did the fastest race time in the 38th lap, then dropped back with higher lap times in the last stint compared to Verstappen, who sustained very consistent lap times until the end of the race. Verstappen gained 1 position and Leclerc lost 2 positions compared to their starting grid positions, as he started having problems with the engine in lap 48.
 
-> Also note that, depending on the number of laps per stint, the slope of the stint lap times may vary in reliability: a stint with 20 laps will be much more reliable to look at than a stint with just 6 laps (remember that we already filtered out all stints with less than 5 laps).
-
+Also note that, depending on the number of laps per stint, the slope of the stint lap times may vary in reliability: a stint with 20 laps will be much more reliable to look at than a stint with just 6 laps (remember that we already filtered out all stints with less than 5 laps).
 
 ## Task 6: Lag Features
 
@@ -116,21 +112,20 @@ Then, we save this dataset as the final dataset (_`final_data.csv`_).
 ## Conclusions
 
 In this chapter, we have:
-- Visualized data
-- Added starting and ending position for each dataset
-- Harmonized datasets' level of detail
-- Merged data from an additional track dataset
-- Performed data augmentation with linear regression parameters (slope and bias) for Tyre and Fuel degradation
-- Adjusted lag features to prevent our model from incorrectly making real-time predictions
 
+* Visualized data
+* Added starting and ending position for each dataset
+* Harmonized datasets' level of detail
+* Merged data from an additional track dataset
+* Performed data augmentation with linear regression parameters (slope and bias) for Tyre and Fuel degradation
+* Adjusted lag features to prevent our model from incorrectly making real-time predictions
 
 Let's proceed to the next chapter, where we'll create a Machine Learning model from our dataset, see which variables are indeed useful and which aren't, and get ready to deploy this Machine Learning model to the Internet.
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - April 20th, 2023
+* **Last Updated By/Date** - July 17th, 2023
