@@ -8,18 +8,18 @@ The main element that we will be creating is a **Data Science** session and note
 
 ![Infrastructure](images/lol_infra.png)
 
-We will use Cloud Shell to execute _`start.sh`_ script that will call Terraform to deploy all the infrastructure required and setup the configuration. If you don't know about Terraform, don't worry, there is no need. Also, there are no installation requirements: we will use Cloud Shell (which has Terraform installed by default) to deploy our infrastructure. 
+We will use Cloud Shell to execute _`start.sh`_ script that will call Terraform to deploy all the infrastructure required and setup the configuration. If you don't know about Terraform, don't worry, there's no need.
 
-Terraform is an Open Source tool to deploy resources in the cloud with code. You declare what you want in Oracle Cloud and Terraform make sure you get the resources created.
+Also, there are no installation requirements: we will use Cloud Shell (which has Terraform installed by default) to deploy our infrastructure.
 
-Do you want to learn more? Feel free to check [Terraform's code in this repository](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/main/dev/terraform) after the workshop.
+> **Note**: Terraform is an Open Source tool to deploy resources in the cloud with code. You declare what you want in Oracle Cloud and Terraform make sure you get the resources created. Want to learn more? Feel free to check [Terraform's code in this repository](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/main/dev/terraform) after the workshop.
 
 Estimated Lab Time: 15 minutes
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account
-* Active Oracle Cloud Account with available credits to use for Data Science service.
+* An Oracle Free Tier, Paid or LiveLabs Cloud Account with available credits to use for Data Science service.
+* In your Oracle Cloud account, you should have administrator permissions, otherwise you may get some errors during the automatic deployment.
 
 ## Task 1: Cloud Shell
 
@@ -29,13 +29,13 @@ Estimated Lab Time: 15 minutes
 2. As soon as the Cloud Shell is loaded, you can download the assets to run this lab.
 
     ```bash
-    <copy>git clone --branch dev https://github.com/oracle-devrel/redbull-pit-strategy.git</copy>
+    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy.git</copy>
     ```
 
 3. The result will look like this:
   ![Git Clone](images/git-clone.png)
 
-4. Change directory with `cd` to `redbull-pit-strategy` directory:
+4. Change directory with _`cd`_ to the _`redbull-pit-strategy`_ directory:
 
     ```bash
     <copy>cd redbull-pit-strategy</copy>
@@ -43,50 +43,50 @@ Estimated Lab Time: 15 minutes
 
 ## Task 2: Deploy with Terraform
 
-1. You are going to create a file `.env.json` that contains variables for terraform. Including the number of desired CPUs for Data Science. Run on Cloud Shell the following command:
+1. By running the following command, we're going to create a file called _`.env.json`_ that contains the necessary variables for Terraform to perform the automatic deployment, including the number of desired CPUs for our Data Science environment. Run on Cloud Shell the following command:
 
     ```bash
     <copy>npx zx scripts/setenv.mjs</copy>
     ```
 
-2. It will run a dependency check and right after ask for a compartment name. If you are in a trial, or brand new to Oracle Cloud, just leave it empty and type _ENTER_.
-    > NOTE: If you want to deploy on a specific compartment, type the name (not the OCI ID) and the compartment will be used.
+2. It will run a dependency check and right after that, prompt you for the desired compartment name where we'll deploy our Data Science environment. If you are in a trial, or brand new to Oracle Cloud, just leave it empty and type _`ENTER`_ (this will use the _`root`_ compartment).
+    > **Note**: If you want to deploy on a specific compartment, type the name of the compartment (not its ID).
 
-3. Then, the script will ask for the `Data Science CPU number`. Type the number 1, but feel free to indicate up to 4 CPUs.
-
-4. The script will finished.
+3. The script will now ask for the `Data Science CPU number`. One CPU is enough, but feel free to allocate up to 4 CPUs (if you are in a Free Trial). You should see something like this:
     ![Cloud Shell setenv](./images/cloud-shell-setenv.png)
 
-5. Terraform uses a file called `terraform.tfvars` that contains the variables Terraform uses to talk to Oracle Cloud and set up your deployment the way you want it. You are going to use a script that will ask you for information to create the `terraform.tfvars` file for you. Run on Cloud Shell the following command:
+4. Terraform uses a file called _`terraform.tfvars`_ that contains the variables Terraform uses to talk to Oracle Cloud and set up the deployment you indicated in step 1  the way you want it. You are going to use the script _`tfvars.mjs`_, which will ask you for information to create the `terraform.tfvars` file for you. Run the following command on your Cloud Shell terminal:
 
     ```bash
     <copy>npx zx scripts/tfvars.mjs</copy>
     ```
 
-6. The script will create the `terraform.tfvars` file.
+5. The script will create the `terraform.tfvars` file:
     ![Cloud Shell tfvars](./images/cloud-shell-tfvars.png)
 
 ## Task 3: Start Deployment
 
-1. Change directory to `dev`
+Now that we've set up all necessary scripts and variables, it's time to run the Terraform start script.
+
+1. Change directory to `dev`:
 
     ```bash
     <copy>cd dev</copy>
     ```
 
-2. Run the `start.sh` script
+2. Run the `start.sh` script:
 
     ```bash
     <copy>./start.sh</copy>
     ```
 
-3. The script will run and it looks like this.
+3. The script will run and it looks like this:
     ![Start SH beginning](images/start-sh-beginning.png)
 
-4. Terraform will create resources for you, and during the process it will look like this.
+4. Terraform will create resources for you:
     ![Start SH terraform](images/start-sh-terraform.png)
 
-5. The final part of the script is to print the output of all the work done.
+5. After the script is done running, it will print the output of all the work done, including a URL to our Data Science environment:
     ![Start SH output](images/start-sh-output.png)
 
 6. Copy the Data Science notebook URL from the output variable _`ds_notebook_session`_. This is the URL we will use to connect to our Data Science environment.
@@ -127,6 +127,7 @@ Having just created our OCI Data Science environment, we need to install the nec
 ## Task 5: Setting up Data Science Environment
 
 We now need to load our notebook into our environment.
+
 1. Opening a **Terminal** inside the _'Other'_ section the console and re-downloading the repository again:
 
     ![open terminal](./images/open_terminal.png)
@@ -187,11 +188,40 @@ We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each o
 * [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
 * [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
 
-You may now [proceed to the next lab](#next).
+## Task 7: Downloading DataSets
 
+As we mentioned, the Data Extraction part is optional and will take a very long time to complete (about 5-6 hours in total) to pull all data from all sources (this is what we do in Lab 3).
+
+Therefore, as we don't have as much time, and if you're interested in getting started as quickly as possible, I recommend you download the official datasets by following this guide.
+
+We now need to load our datasets into our environment. For that, we reuse the terminal we created in the previous step:
+
+![open terminal](./images/open_terminal.png)
+
+Then, we execute the following command, which will download all necessary datasets:
+
+```bash
+<copy>
+wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/pofZzTCEXSkfykKLL0FeZCf5bmugGsnn-2xbRt17vdoWhKv5aCWqy8-weaqRW46_/n/axywji1aljc2/b/league-hol-ocw-datasets/o/redbull_ocw_2023.zip && unzip redbull_ocw_2023.zip -d /home/datascience/.
+</copy>
+```
+
+After executing the command, you should see something like this:
+
+![unzip result](./images/unzip_result.png)
+
+And you should see these three files in your root directory:
+
+* _`circuit_length.csv`_
+* _`final_data.csv`_
+* _`semi_final_data.csv`_
+
+> **Note**: if you prefer, you can also download the datasets from Kaggle, a Data Science community for Datasets and Machine Learning models. [Here's a link to the official Kaggle repository](https://www.kaggle.com/datasets/jasperan/redbull-f1-pit-strategy) where the same data is available.
+
+You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - May 28th, 2023
+* **Last Updated By/Date** - July 17th, 2023
