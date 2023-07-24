@@ -143,7 +143,7 @@ We now need to load our notebook into our environment.
 2. Then, we re-clone the repository:
 
     ```bash
-    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy --branch dev</copy>
+    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy</copy>
     ```
 
 3. Install the conda environment
