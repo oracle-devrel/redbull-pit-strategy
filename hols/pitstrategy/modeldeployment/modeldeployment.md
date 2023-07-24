@@ -4,7 +4,7 @@
 
 Now that we have our models created and saved into a pickle file, it's time to learn how to deploy these models to the Internet.
 
-Estimated Time: 20 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 
