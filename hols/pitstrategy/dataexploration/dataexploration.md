@@ -1,4 +1,4 @@
-# Lab 3: Data Exploration
+# Data Exploration
 
 ## Introduction
 
@@ -10,7 +10,11 @@ For that, we'll look at the different data sources we have:
 * Race Results Data
 * Lap Data
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
+
+### Objectives
+
+In this lab, you will learn about the specifics on Exploratory Data Analysis (EDA), why it's necessary to have a visual overview of your data, and how you can do that.
 
 ### Prerequisites
 

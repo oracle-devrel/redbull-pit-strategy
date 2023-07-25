@@ -1,10 +1,14 @@
-# Lab 6: Model Deployment
+# Model Deployment
 
 ## Introduction
 
 Now that we have our models created and saved into a pickle file, it's time to learn how to deploy these models to the Internet.
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 10 minutes
+
+### Objectives
+
+In this lab, you will learn how to deploy models to OCI, so you can run them 24/7 via an API.
 
 ### Prerequisites
 
@@ -74,7 +78,7 @@ These models and model deployments are accessible from the OCI Panel, and can be
 
 ![model deployments](./images/model_deployments.png)
 
-From within the model deployment, we can extract the endpoint API: 
+From within the model deployment, we can extract the endpoint API:
 
 ![invoke endpoint url](./images/invoking_endpoint_url.png)
 

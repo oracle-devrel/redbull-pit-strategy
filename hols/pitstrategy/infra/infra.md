@@ -1,4 +1,4 @@
-# Lab 1: Infrastructure
+# Infrastructure
 
 ## Introduction
 
@@ -14,17 +14,25 @@ Also, there are no installation requirements: we will use Cloud Shell (which has
 
 > **Note**: Terraform is an Open Source tool to deploy resources in the cloud with code. You declare what you want in Oracle Cloud and Terraform make sure you get the resources created. Want to learn more? Feel free to check [Terraform's code in this repository](https://github.com/oracle-devrel/leagueoflegends-optimizer/tree/main/dev/terraform) after the workshop.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
+
+### Objectives
+
+In this lab, you will learn how to:
+
+- Use Oracle Cloud Infrastructure for your Compute needs
+- Deploy resources using Terraform and Ansible
+- Optionally download the datasets we will use, if you're not interested in doing the Data Extraction lab
 
 ### Prerequisites
 
-* An Oracle Free Tier, Paid or LiveLabs Cloud Account with available credits to use for Data Science service.
-* In your Oracle Cloud account, you should have administrator permissions, otherwise you may get some errors during the automatic deployment.
+- An Oracle Free Tier, Paid or LiveLabs Cloud Account with available credits to use for Data Science service.
+- In your Oracle Cloud account, you should have administrator permissions, otherwise you may get some errors during the automatic deployment.
 
 ## Task 1: Cloud Shell
 
 1. From the Oracle Cloud Console, click on **Cloud Shell**.
-  ![Cloud Shell Button](images/cloud-shell-button.png)
+    ![Cloud Shell Button](images/cloud-shell-button.png)
 
 2. As soon as the Cloud Shell is loaded, you can download the assets to run this lab.
 
@@ -33,7 +41,7 @@ Estimated Lab Time: 15 minutes
     ```
 
 3. The result will look like this:
-  ![Git Clone](images/git-clone.png)
+    ![Git Clone](images/git-clone.png)
 
 4. Change directory with _`cd`_ to the _`redbull-pit-strategy`_ directory:
 
@@ -98,13 +106,13 @@ Now that we've set up all necessary scripts and variables, it's time to run the 
 
 Having just created our OCI Data Science environment, we need to install the necessary Python dependencies to execute our code. For that, we'll access our environment.
 
-* The easiest way is to access into the notebook **through the URL** that we previously copied from Terraform's output.
+- The easiest way is to access into the notebook **through the URL** that we previously copied from Terraform's output.
 
     ![Start SH output](images/start-sh-ssh.png)
 
     If you have done it this way, make sure to **skip through to the next task**.
 
-* (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
+- (Optionally) We can also access to the notebook via the OCI console, on the top left hamburger menu:
 
     ![select data science](./images/select_data_science.png)
 
@@ -135,7 +143,7 @@ We now need to load our notebook into our environment.
 2. Then, we re-clone the repository:
 
     ```bash
-    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy --branch dev</copy>
+    <copy>git clone https://github.com/oracle-devrel/redbull-pit-strategy</copy>
     ```
 
 3. Install the conda environment
@@ -176,17 +184,17 @@ After these commands, all requirements will be fulfilled and we're ready to exec
 
 ## Task 6: Accessing our Notebooks
 
-Once we've re-downloaded the repository (or used the upload button to transfer the notebooks), we should see the repository / files in our file explorer:
+1. Once we've re-downloaded the repository (or used the upload button to transfer the notebooks), we should see the repository / files in our file explorer:
 
-![file explorer](./images/file_explorer.png)
+    ![file explorer](./images/file_explorer.png)
 
-We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each one of the notebooks. This is the list of notebooks we will review:
+2. We navigate to the _`redbull-pit-strategy/notebooks/`_ directory and open each one of the notebooks. This is the list of notebooks we will review:
 
-* [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
-* [_`01 data exploration.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/01%20data%20exploration.ipynb)
-* [_`02 merge data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/02%20merge%20data.ipynb)
-* [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
-* [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
+- [_`00 pull data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/00%20pull%20data.ipynb)
+- [_`01 data exploration.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/01%20data%20exploration.ipynb)
+- [_`02 merge data.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/02%20merge%20data.ipynb)
+- [_`03 Model Training.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/03%20Model%20Training.ipynb)
+- [_`04 deploy model.ipynb`_](https://github.com/oracle-devrel/redbull-pit-strategy/blob/dev/notebooks/04%20deploy%20model.ipynb)
 
 ## Task 7: Downloading DataSets
 
@@ -194,27 +202,27 @@ As we mentioned, the Data Extraction part is optional and will take a very long 
 
 Therefore, as we don't have as much time, and if you're interested in getting started as quickly as possible, I recommend you download the official datasets by following this guide.
 
-We now need to load our datasets into our environment. For that, we reuse the terminal we created in the previous step:
+1. We now need to load our datasets into our environment. For that, we reuse the terminal we created in the previous step:
 
-![open terminal](./images/open_terminal.png)
+    ![open terminal](./images/open_terminal.png)
 
-Then, we execute the following command, which will download all necessary datasets:
+2. Then, we execute the following command, which will download all necessary datasets:
 
-```bash
-<copy>
-wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/pofZzTCEXSkfykKLL0FeZCf5bmugGsnn-2xbRt17vdoWhKv5aCWqy8-weaqRW46_/n/axywji1aljc2/b/league-hol-ocw-datasets/o/redbull_ocw_2023.zip && unzip redbull_ocw_2023.zip -d /home/datascience/.
-</copy>
-```
+    ```bash
+    <copy>
+    wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/pofZzTCEXSkfykKLL0FeZCf5bmugGsnn-2xbRt17vdoWhKv5aCWqy8-weaqRW46_/n/axywji1aljc2/b/league-hol-ocw-datasets/o/redbull_ocw_2023.zip && unzip redbull_ocw_2023.zip -d /home/datascience/.
+    </copy>
+    ```
 
-After executing the command, you should see something like this:
+3. After executing the command, you should see something like this:
 
-![unzip result](./images/unzip_result.png)
+    ![unzip result](./images/unzip_result.png)
 
-And you should see these three files in your root directory:
+4. And you should see these three files in your root directory:
 
-* _`circuit_length.csv`_
-* _`final_data.csv`_
-* _`semi_final_data.csv`_
+    - _`circuit_length.csv`_
+    - _`final_data.csv`_
+    - _`semi_final_data.csv`_
 
 > **Note**: if you prefer, you can also download the datasets from Kaggle, a Data Science community for Datasets and Machine Learning models. [Here's a link to the official Kaggle repository](https://www.kaggle.com/datasets/jasperan/redbull-f1-pit-strategy) where the same data is available.
 
@@ -222,6 +230,6 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 
-* **Author** - Nacho Martinez, Data Science Advocate @ DevRel
-* **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - July 17th, 2023
+- **Author** - Nacho Martinez, Data Science Advocate @ DevRel
+- **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
+- **Last Updated By/Date** - July 24th, 2023

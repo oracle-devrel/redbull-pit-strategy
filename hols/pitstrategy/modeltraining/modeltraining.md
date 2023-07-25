@@ -1,4 +1,4 @@
-# Lab 5: Model Training
+# Model Training
 
 ## Introduction
 
@@ -7,13 +7,17 @@ Once we have our dataset ready, this notebook focuses on creating two different 
 - **Regression** Model: we will predict the optimal stint length for the first stint (stintNum == 1). In other words, we'll predict when it's most optimal for the driver to pit **for the first time** in a race.
 - **Classification** Model: we will use **bucketization** as a technique to classify the optimal pit stop window. We will have 5 different buckets; and our model will predict in which of these buckets it's most optimal to pit for the first time in a race.
 
-Estimated Lab Time: 30 minutes
+Estimated Time: 30 minutes
+
+### Objectives
+
+In this lab, you will learn how to train your own Machine Learning models (in an effective way), and what kind of things you need to understand and complete before doing so.
 
 ### Prerequisites
 
 - An Oracle Free Tier, Paid or LiveLabs Cloud Account
 - Active Oracle Cloud Account with available credits to use for Data Science service.
-- [Previously created](../infra/infra.md) OCI Data Science Environment
+- Previously created OCI Data Science Environment
 
 ## Task 1: Loading Data
 
@@ -133,9 +137,8 @@ Let's proceed to the next chapter, where we'll create a Machine Learning model f
 
 You may now [proceed to the next lab](#next).
 
-
 ## Acknowledgements
 
-* **Author** - Nacho Martinez, Data Science Advocate @ DevRel
-* **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - July 17th, 2023
+- **Author** - Nacho Martinez, Data Science Advocate @ DevRel
+- **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
+- **Last Updated By/Date** - July 24th, 2023
