@@ -36,52 +36,52 @@ Using FastF1's API, we'll extract five types of events:
 
 We want to build a dataset as complete and robust as possible, so our focus will be on obtaining **as much information as possible**. For that, we've created some functions to help us _iterate_ through all kinds of sessions (practice, qualifying, race).
 
-For obtaining the F1 schedule, types of sessions, dates (which helps us iterate) we also take advantage of FastF1's API. For example, we can extract a year's schedule by running the following function in our notebook:
+1. For obtaining the F1 schedule, types of sessions, dates (which helps us iterate) we also take advantage of FastF1's API. For example, we can extract a year's schedule by running the following function in our notebook:
 
-```bash
-<copy>
-'''
-Create an ~fastf1.events.EventSchedule object for a specific season.
+    ```bash
+    <copy>
+    '''
+    Create an ~fastf1.events.EventSchedule object for a specific season.
 
-Args:
-    year (int): Championship year
-    include_testing (bool): Include or exclude testing sessions from the
-        event schedule.
-    force_ergast (bool): Always use data from the ergast database to
-        create the event schedule
-'''
+    Args:
+        year (int): Championship year
+        include_testing (bool): Include or exclude testing sessions from the
+            event schedule.
+        force_ergast (bool): Always use data from the ergast database to
+            create the event schedule
+    '''
 
-# Call get_event_schedule()
-sch = fastf1.get_event_schedule(year).to_dict()
-</copy>
-```
+    # Call get_event_schedule()
+    sch = fastf1.get_event_schedule(year).to_dict()
+    </copy>
+    ```
 
 ## Task 2: Running the Notebook
 
-In order to run the notebook _`00_ pull data.ipynb`_ after opening it (by double clicking it), we need to ensure that the selected Python/conda environment is the right one. By default, 'Python 3' will be the selected kernel. The right kernel to choose should be called _`conda env:mycondav1_0`_ if you followed all steps. We need to change this in the following way:
+1. In order to run the notebook _`00_ pull data.ipynb`_ after opening it (by double clicking it), we need to ensure that the selected Python/conda environment is the right one. By default, 'Python 3' will be the selected kernel. The right kernel to choose should be called _`conda env:mycondav1_0`_ if you followed all steps. We need to change this in the following way:
 
-![select preferred kernel](./images/select_preferred_kernel.png)
+    ![select preferred kernel](./images/select_preferred_kernel.png)
 
-After selecting it, press **Select** to make the notebook run in the selected kernel. This ensures that our notebook will have the necessary installed dependencies before running.
+2. After selecting it, press **Select** to make the notebook run in the selected kernel. This ensures that our notebook will have the necessary installed dependencies before running.
 
-Now, when we **run** our notebook, we progressively get data from the last 5 years, for all events in the F1 schedule, and for all session types. This should give us enough data points to get started with Machine Learning.
+3. Now, when we **run** our notebook, we progressively get data from the last 5 years, for all events in the F1 schedule, and for all session types. This should give us enough data points to get started with Machine Learning.
 
-![notebook in execution](./images/notebook_being_run.png)
+    ![notebook in execution](./images/notebook_being_run.png)
 
-> Note: since we're pulling data from five years for all types of sessions and events, and the API has a rate limit (to prevent abuse from malicious users), the process will take **a long while**.
-> You're free to run this at your own pace, but keep in mind that the process can take **4 to 5 hours** to complete, mainly due to the API's limits. Therefore, we have prepared the resulting files from an execution made on August 2022, so that you can **skip** running this notebook by yourself.
+    > Note: since we're pulling data from five years for all types of sessions and events, and the API has a rate limit (to prevent abuse from malicious users), the process will take **a long while**.
+    > You're free to run this at your own pace, but keep in mind that the process can take **4 to 5 hours** to complete, mainly due to the API's limits. Therefore, we have prepared the resulting files from an execution made on August 2022, so that you can **skip** running this notebook by yourself.
 
-After we have all files present in our cache (which can be found in the data path _`redbull-pit-strategy/data/`_), we concatenate all this data and save it into three types of files:
+    After we have all files present in our cache (which can be found in the data path _`redbull-pit-strategy/data/`_), we concatenate all this data and save it into three types of files:
 
-* _`weathers_xxxx.pkl`_
-* _`laps_xxxx.pkl`_
-* _`results_xxxx.pkl`_
+    * _`weathers_xxxx.pkl`_
+    * _`laps_xxxx.pkl`_
+    * _`results_xxxx.pkl`_
 
-Where xxxx represents data from a specific year.
+    Where xxxx represents data from a specific year.
 
-Each file contains **all** concatenated information from every downloaded file into our data path:
+4. Each file contains **all** concatenated information from every downloaded file into our data path:
 
-![concatenate and save to file](./images/concat_and_save.png)
+    ![concatenate and save to file](./images/concat_and_save.png)
 
 Now, we're done with data extraction. Our job in the following chapters will be to **harmonize** this data into few files that we can use for our Machine Learning (ML) models.
 
@@ -93,4 +93,4 @@ You may now [proceed to the next lab](#next).
 
 * **Author** - Nacho Martinez, Data Science Advocate @ DevRel
 * **Contributors** - Victor Martin - Product Strategy Director, Alireza Dibazar - Principal Data Scientist, Vesselin Diev - Senior Director of Data Science, ML Innovation Team
-* **Last Updated By/Date** - July 17th, 2023
+* **Last Updated By/Date** - July 26th, 2023
