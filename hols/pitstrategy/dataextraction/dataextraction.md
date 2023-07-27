@@ -39,7 +39,6 @@ We want to build a dataset as complete and robust as possible, so our focus will
 1. For obtaining the F1 schedule, types of sessions, dates (which helps us iterate) we also take advantage of FastF1's API. For example, we can extract a year's schedule by running the following function in our notebook:
 
     ```bash
-    <copy>
     '''
     Create an ~fastf1.events.EventSchedule object for a specific season.
 
@@ -52,6 +51,7 @@ We want to build a dataset as complete and robust as possible, so our focus will
     '''
 
     # Call get_event_schedule()
+    <copy>
     sch = fastf1.get_event_schedule(year).to_dict()
     </copy>
     ```
