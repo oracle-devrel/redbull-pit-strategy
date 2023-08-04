@@ -52,5 +52,5 @@ const desiredNumberCPUs = await setVariableFromEnvOrPrompt(
   "Data Science CPU number"
 );
 
-properties = { ...properties, desiredNumberCPUs: desiredNumberCPUs || 1 };
+properties = { ...properties, desiredNumberCPUs: desiredNumberCPUs || 4 };
 await writeEnvJson(properties);
