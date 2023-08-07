@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[Lab 4](videohub:1_m5s78ukh)
+
 After we have extracted and analyzed our datasets, it's time to merge them into a more complete file/dataset that combines the characteristics of the smaller files we already have. Then, we will use this merged dataset as an input to our Machine Learning models.
 
 Estimated Time: 10 minutes
