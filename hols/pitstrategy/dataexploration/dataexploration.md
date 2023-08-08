@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[Lab 3](videohub:1_jbem0yvk)
+
 In this section of the workshop, we will focus on how to explore the data we have access to, in order to get a better understanding of the data and how we can leverage the power of ML against this data afterwards. Moreover, exploring the data will help us decide what to do with the data: we have several files and we can join these separate files into a bigger one to simplify our dataset.
 
 For that, we'll look at the different data sources we have:

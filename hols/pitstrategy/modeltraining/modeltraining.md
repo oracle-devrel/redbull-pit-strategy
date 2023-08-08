@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[Lab 5](videohub:1_n4i9ao96)
+
 Once we have our dataset ready, this notebook focuses on creating two different ML models: one **classifier** and one **regressor**.
 
 - **Regression** Model: we will predict the optimal stint length for the first stint (stintNum == 1). In other words, we'll predict when it's most optimal for the driver to pit **for the first time** in a race.

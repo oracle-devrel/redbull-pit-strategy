@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[Lab 2](videohub:1_pl7xzwsc)
+
 In this section of the workshop, we will focus on how to extract **meaningful** data, how to perform requests to a Python library (that will help us obtain all this data) and how to save this information into **persistent** files that we can re-use over and over.
 
 Note that, since this lab takes 5 to 6 hours to pull all historical data (from the beginning of Formula 1), it's considered an optional dataset. If you're not interested in waiting so long, head on to the Infrastructure lab, where you can download the datasets and skip the waiting to continue with the rest of the lab.

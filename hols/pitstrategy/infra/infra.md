@@ -2,6 +2,8 @@
 
 ## Introduction
 
+[Lab 1](videohub:1_oan7duyo)
+
 In this lab, we will build the infrastructure that we will use to run the rest of the workshop.
 
 The main element that we will be creating is a **Data Science** session and notebook, to experiment with the newly-generated data using notebooks.
