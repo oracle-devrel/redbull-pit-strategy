@@ -1,7 +1,7 @@
 setuptools
 wheel
 numpy
-pandas
+pandas<2.0.0
 fastf1
 matplotlib
 numpy
