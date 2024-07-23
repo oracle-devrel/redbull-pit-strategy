@@ -42,7 +42,7 @@ This project is open source. Please submit your contributions by forking this re
 
 ## License
 
-Copyright (c) 2021 Oracle and/or its affiliates.
+Copyright (c) 2024 Oracle and/or its affiliates.
 
 Licensed under the Universal Permissive License (UPL), Version 1.0.
 
@@ -53,7 +53,7 @@ See [LICENSE](LICENSE) for more details.
 
 ## License
 
-Copyright (c) 2022 Oracle and/or its affiliates.
+Copyright (c) 2024 Oracle and/or its affiliates.
 
 Licensed under the Universal Permissive License (UPL), Version 1.0.
 
